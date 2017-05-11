@@ -1,0 +1,328 @@
+# battery_fan.txt
+# created by shmilee -- adapted by tluck for T460
+# refer to T440p, X220, Guide 'How to patch DSDT for working battery status'
+
+# OperationRegion (ECOR, EmbeddedControl, 0x00, 0x0100)
+# 1. declaration accessed:
+# HWAC,   16, SBRC,   16, SBFC,   16, SBAC,   16, SBVO,   16, SBBM,   16,
+# SBDC,   16, SBDV,   16, SBSN,   16
+# SBCH,   32
+# SBMN,  128
+# SBDN,  128
+# 2. declaration not accessed:
+# HWAK,   16, HSPD,   16, HDEN,   32, HDEP,   32,
+# SBAE,   16, SBRS,   16, SBAF,   16, SBBS,   16
+# SBMD,   16, SBCC,   16
+# SBOM,   16, SBSI,   16, SBDT,   16,
+
+# Note: for disable secondary battery - T460 has internal and external (BAT1)
+#  *** uncomment this line if you have only one battery installed)
+#into method label _STA parent_label BAT1 replace_content begin Return(0) end;
+
+# 1.1 deal with 16-bit
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized)\n
+{\n
+    Return (Or(Arg0, ShiftLeft(Arg1, 8)))\n
+}\n
+end;
+
+# declarations from 16-bit to 8-bit
+into device label EC code_regex HWAC,\s+16, replace_matched begin WAC0,8,WAC1,8, end;
+into device label EC code_regex SBRC,\s+16, replace_matched begin BRC0,8,BRC1,8, end;
+into device label EC code_regex SBFC,\s+16, replace_matched begin BFC0,8,BFC1,8, end;
+into device label EC code_regex SBAC,\s+16, replace_matched begin BAC0,8,BAC1,8, end;
+into device label EC code_regex SBVO,\s+16, replace_matched begin BVO0,8,BVO1,8, end;
+into device label EC code_regex SBBM,\s+16, replace_matched begin BBM0,8,BBM1,8, end;
+into device label EC code_regex SBDC,\s+16, replace_matched begin BDC0,8,BDC1,8, end;
+into device label EC code_regex SBDV,\s+16, replace_matched begin BDV0,8,BDV1,8, end;
+into device label EC code_regex SBSN,\s+16 replace_matched begin BSN0,8,BSN1,8, end;
+
+# access to those registers from 16-bit to 8-bit
+into_all all code_regex \\_SB\.PCI0\.LPC\.EC\.HWAC replaceall_matched begin B1B2(\\_SB.PCI0.LPC.EC.WAC0,\\_SB.PCI0.LPC.EC.WAC1) end;
+into_all method label GBST code_regex \(SBRC, replaceall_matched begin (B1B2 (BRC0, BRC1), end;
+into_all method label GBIF code_regex \(SBFC, replaceall_matched begin (B1B2 (BFC0, BFC1), end;
+into_all method label GBST code_regex \(SBAC, replaceall_matched begin (B1B2 (BAC0, BAC1), end;
+into_all method label GBST code_regex \(SBVO, replaceall_matched begin (B1B2 (BVO0, BVO1), end;
+into_all method label GBIF code_regex \(SBBM, replaceall_matched begin (B1B2 (BBM0, BBM1), end;
+into_all method label GBIF code_regex \(SBDC, replaceall_matched begin (B1B2 (BDC0, BDC1), end;
+into_all method label GBIF code_regex \(SBSN, replaceall_matched begin (B1B2 (BSN0, BSN1), end;
+
+into_all method label GBIF code_regex SBDV replaceall_matched begin B1B2 (BDV0, BDV1) end;
+
+# 1.2 deal with 32-bit
+into method label B1B4 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B4, 4, NotSerialized)\n
+{\n
+    Store (Arg3, Local0)\n
+    Or (Arg2, ShiftLeft(Local0, 8), Local0)\n
+    Or (Arg1, ShiftLeft(Local0, 8), Local0)\n
+    Or (Arg0, ShiftLeft(Local0, 8), Local0)\n
+    Return (Local0)\n
+}\n
+end;
+
+into device label EC code_regex SBCH,\s+32 replace_matched begin BCH0,8,BCH1,8,BCH2,8,BCH3,8 end;
+into_all method label GBIF code_regex \(SBCH, replaceall_matched begin (B1B4(BCH0,BCH1,BCH2,BCH3), end;
+
+# 1.3 deal with 128-bit
+# utility methods to read/write buffers from/to EC
+into method label RE1B parent_label EC remove_entry;
+into method label RECB parent_label EC remove_entry;
+into device label EC insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+into device label EC code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
+into device label EC code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
+
+into method label GBIF code_regex \(SBMN, replaceall_matched begin (RECB(0xA0,128), end;
+into method label GBIF code_regex \(SBDN, replaceall_matched begin (RECB(0xA0,128), end;
+
+# 2.0 BATC -- combined internal and external battery
+# use RehabMan's dual battery_BATC.txt (moddified for T460)
+
+into device label EC insert
+begin
+        Device (BATC)\n
+        {\n
+            Name(_HID, EisaId ("PNP0C0A"))\n
+            Name(_UID, 0x02)\n
+
+            Method(_INI)\n
+            {\n
+                // disable original battery objects by setting invalid _HID\n
+                ^^BAT0._HID = 0\n
+                ^^BAT1._HID = 0\n
+            }\n
+
+            Method(CVWA, 3)\n
+            // Convert mW to mA (or mWh to mAh)\n
+            // Arg0 is mW or mWh (or mA/mAh in the case Arg2==0)\n
+            // Arg1 is mV (usually design voltage)\n
+            // Arg2 is whether conversion is needed (non-zero for convert)\n
+            // return is mA or mAh\n
+
+            {\n
+                If (Arg2)\n
+                {\n
+                    Arg0 = (Arg0 * 1000) / Arg1\n
+                }\n
+                Return(Arg0)\n
+            }\n
+
+            Method(_STA)\n
+            {\n
+                // call original _STA for BAT0 and BAT1\n
+                // result is bitwise OR between them\n
+                Return(^^BAT0._STA() | ^^BAT1._STA())\n
+            }\n
+
+            Name(B0CO, 0x00) // BAT0 0/1 needs conversion to mAh\n
+            Name(B1CO, 0x00) // BAT1 0/1 needs conversion to mAh\n
+            Name(B0DV, 0x00) // BAT0 design voltage\n
+            Name(B1DV, 0x00) // BAT1 design voltage\n
+
+            Method(_BST)\n
+            {\n
+                // Local0 BAT0._BST\n
+                // Local1 BAT1._BST\n
+                // Local2 BAT0._STA\n
+                // Local3 BAT1._STA\n
+                // Local4/Local5 scratch\n
+
+                // gather battery data from BAT0\n
+                Local0 = ^^BAT0._BST()\n
+                Local2 = ^^BAT0._STA()\n
+                If (0x1f == Local2)\n
+                {\n
+                    // check for invalid remaining capacity\n
+                    Local4 = DerefOf(Local0[2])\n
+                    If (!Local4 || Ones == Local4) { Local2 = 0 }\n
+                }\n
+                // gather battery data from BAT1\n
+                Local1 = ^^BAT1._BST()\n
+                Local3 = ^^BAT1._STA()\n
+                If (0x1f == Local3)\n
+                {\n
+                    // check for invalid remaining capacity\n
+                    Local4 = DerefOf(Local1[2])\n
+                    If (!Local4 || Ones == Local4) { Local3 = 0 }\n
+                }\n
+                // find primary and secondary battery\n
+                If (0x1f != Local2 && 0x1f == Local3)\n
+                {\n
+                    // make primary use BAT1 data\n
+                    Local0 = Local1 // BAT1._BST result\n
+                    Local2 = Local3 // BAT1._STA result\n
+                    Local3 = 0  // no secondary battery\n
+                }\n
+                // combine batteries into Local0 result if possible\n
+                If (0x1f == Local2 && 0x1f == Local3)\n
+                {\n
+                    // _BST 0 - Battery State - if one battery is charging, then charging, else discharging\n
+                    Local4 = DerefOf(Local0[0])\n
+                    Local5 = DerefOf(Local1[0])\n
+                    If (Local4 == 2 || Local5 == 2)\n
+                    {\n
+                        // 2 = charging\n
+                        Local0[0] = 2\n
+                    }\n
+                    ElseIf (Local4 == 1 || Local5 == 1)\n
+                    {\n
+                        // 1 = discharging\n
+                        Local0[0] = 1\n
+                    }\n
+                    ElseIf (Local4 == 5 || Local5 == 5)\n
+                    {\n
+                        // critical and discharging\n
+                        Local0[0] = 5\n
+                    }\n
+                    ElseIf (Local4 == 4 || Local5 == 4)\n
+                    {\n
+                        // critical\n
+                        Local0[0] = 4\n
+                    }\n
+                    // if none of the above, just leave as BAT0 is\n
+
+                    // Note: Depends on _BIF being called before _BST to set B0CO and B1CO\n
+
+                    // _BST 1 - Battery Present Rate - Add BAT0 and BAT1 values\n
+                    Local0[1] = CVWA(DerefOf(Local0[1]), B0DV, B0CO) + CVWA(DerefOf(Local1[1]), B1DV, B1CO)\n
+                    // _BST 2 - Battery Remaining Capacity - Add BAT0 and BAT1 values\n
+                    Local0[2] = CVWA(DerefOf(Local0[2]), B0DV, B0CO) + CVWA(DerefOf(Local1[2]), B1DV, B1CO)\n
+                    // _BST 3 - Battery Present Voltage - Average BAT0 and BAT1 values\n
+                    Local0[3] = (DerefOf(Local0[3]) + DerefOf(Local1[3])) / 2\n
+                }\n
+                Return(Local0)\n
+            } // _BST\n
+
+            Method(_BIF)\n
+            {\n
+                // Local0 BAT0._BIF\n
+                // Local1 BAT1._BIF\n
+                // Local2 BAT0._STA\n
+                // Local3 BAT1._STA\n
+                // Local4/Local5 scratch\n
+
+                // gather and validate data from BAT0\n
+                Local0 = ^^BAT0._BIF()\n
+                Local2 = ^^BAT0._STA()\n
+                If (0x1f == Local2)\n
+                {\n
+                    // check for invalid design capacity\n
+                    Local4 = DerefOf(Local0[1])\n
+                    If (!Local4 || Ones == Local4) { Local2 = 0 }\n
+                    // check for invalid max capacity\n
+                    Local4 = DerefOf(Local0[2])\n
+                    If (!Local4 || Ones == Local4) { Local2 = 0 }\n
+                    // check for invalid design voltage\n
+                    Local4 = DerefOf(Local0[4])\n
+                    If (!Local4 || Ones == Local4) { Local2 = 0 }\n
+                }\n
+                // gather and validate data from BAT1\n
+                Local1 = ^^BAT1._BIF()\n
+                Local3 = ^^BAT1._STA()\n
+                If (0x1f == Local3)\n
+                {\n
+                    // check for invalid design capacity\n
+                    Local4 = DerefOf(Local1[1])\n
+                    If (!Local4 || Ones == Local4) { Local3 = 0 }\n
+                    // check for invalid max capacity\n
+                    Local4 = DerefOf(Local1[2])\n
+                    If (!Local4 || Ones == Local4) { Local3 = 0 }\n
+                    // check for invalid design voltage\n
+                    Local4 = DerefOf(Local1[4])\n
+                    If (!Local4 || Ones == Local4) { Local3 = 0 }\n
+                }\n
+                // find primary and secondary battery\n
+                If (0x1f != Local2 && 0x1f == Local3)\n
+                {\n
+                    // make primary use BAT1 data\n
+                    Local0 = Local1 // BAT1._BIF result\n
+                    Local2 = Local3 // BAT1._STA result\n
+                    Local3 = 0  // no secondary battery\n
+                }\n
+                // combine batteries into Local0 result if possible\n
+                If (0x1f == Local2 && 0x1f == Local3)\n
+                {\n
+                    // _BIF 0 - Power Unit - 0 = mWh | 1 = mAh\n
+                    // set B0CO/B1CO if convertion to amps needed\n
+                    B0CO = !DerefOf(Local0[0])\n
+                    B1CO = !DerefOf(Local1[0])\n
+                    // set _BIF[0] = 1 => mAh\n
+                    Local0[0] = 1\n
+
+                    // _BIF 4 - Design Voltage - store value for each Battery in mV\n
+                    B0DV = DerefOf(Local0[4]) // cache BAT0 voltage\n
+                    B1DV = DerefOf(Local1[4]) // cache BAT1 voltage\n
+
+                    // _BIF 1 - Design Capacity - add BAT0 and BAT1 values\n
+                    // tjl - needed to add to Design Capacity to be higher than combined max - 2x2060 Max\n 
+                    Local0[1] = 51 + CVWA(DerefOf(Local0[1]), B0DV, B0CO) + CVWA(DerefOf(Local1[1]), B1DV, B1CO)\n
+                    // _BIF 2 - Last Full Charge Capacity - add BAT0 and BAT1 values\n
+                    Local0[2] = CVWA(DerefOf(Local0[2]), B0DV, B0CO) + CVWA(DerefOf(Local1[2]), B1DV, B1CO)\n
+                    // _BIF 3 - Battery Technology - leave BAT0 value\n
+                    // _BIF 4 - Design Voltage - average BAT0 and BAT1 values\n
+                    Local0[4] = (B0DV + B1DV) / 2\n
+                    // _BIF 5 - Design Capacity Warning - add BAT0 and BAT1 values\n
+                    Local0[5] = CVWA(DerefOf(Local0[5]), B0DV, B0CO) + CVWA(DerefOf(Local1[5]), B1DV, B1CO)\n
+                    // _BIF 6 - Design Capacity of Low - add BAT0 and BAT1 values\n
+                    Local0[6] = CVWA(DerefOf(Local0[6]), B0DV, B0CO) + CVWA(DerefOf(Local1[6]), B1DV, B1CO)\n
+                    // _BIF 7+ - Leave BAT0 values for now\n
+                }\n
+                Return(Local0)\n
+            } // _BIF\n
+        } // BATC\n
+end;
+// EOF
+
+
+# 3.0 fan/temp
+
+# declarations from 16-bit to 8-bit
+into device label EC code_regex HSPD,\s+16, replace_matched begin HFN1,8,HFN2,8, end;
+
+into device label LPC insert
+begin
+                Device (SMCD)\n
+                {\n
+                    Name (_HID, "MON0000")  // _HID: Hardware ID\n
+                    Method (FAN0, 0, NotSerialized)\n
+                    {\n
+                        Store (B1B2 (\_SB.PCI0.LPC.EC.HFN1, \_SB.PCI0.LPC.EC.HFN2), Local0)\n
+                        Return (Local0)\n
+                    }\n
+\n
+                    Method (TCPU, 0, NotSerialized)\n
+                    {\n
+                        Store (\_SB.PCI0.LPC.EC.TMP0, Local0)\n
+                        Return (Local0)\n
+                    }\n
+                }\n
+end;
+// EOF

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# reload TrackPad
+kextload  /Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext &
+
+# turn off eth and wifi
+
+#ethd=$( networksetup -listallhardwareports | awk '$3=="Ethernet" {getline; print $2}')
+# if ethd was Enabled before sleep - renable it ie turn back on 
+if [[ -f /tmp/eth.status.txt ]]
+then
+status=$(cat /tmp/eth.status.txt)
+	if [[ $status == "Enabled" ]]
+	then
+	networksetup -setnetworkserviceenabled Ethernet on
+	fi
+rm /tmp/eth.status.txt
+fi
+
+# if ethd was Enabled before sleep - renable it ie turn back on 
+if [[ -f /tmp/wifi.status.txt ]]
+then
+status=$(cat /tmp/wifi.status.txt)
+	if [[ ${status##*: } == "On" ]]
+	then
+	wifi=$( networksetup -listallhardwareports | awk '$3=="Wi-Fi"    {getline; print $2}')
+	(sleep 1; networksetup -setairportpower $wifi on ) &
+	fi
+rm /tmp/wifi.status.txt
+fi
+
+exit 

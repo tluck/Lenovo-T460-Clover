@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# reset TrackPad
+kextunload -p /Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext &
+
+# turn off eth and wifi
+
+#ethd=$( networksetup -listallhardwareports | awk '$3=="Ethernet" {getline; print $2}')
+status=$( networksetup -getnetworkserviceenabled Ethernet | tee /tmp/eth.status.txt )
+if [[ $status == "Enabled" ]]
+then
+networksetup -setnetworkserviceenabled Ethernet off
+fi
+
+sleep 1
+
+wifi=$( networksetup -listallhardwareports | awk '$3=="Wi-Fi"    {getline; print $2}')
+status=$( networksetup -getairportpower $wifi | tee /tmp/wifi.status.txt )
+if [[ ${status##*: } == "On" ]]
+then
+networksetup -setairportpower $wifi off
+fi
+
+exit
