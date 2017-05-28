@@ -2,12 +2,30 @@
 
 #hn=$( hostname )
 
-disk0="macOS "
+if [[ "$1" == "" ]];
+then
+    disk0="macOS "
+else
+    disk0="$1"
+fi
+
 esp0=$( diskutil list | grep "$disk0" | awk '{print $6}'| sed -e's/s2//' -e's/disk//' )
+if [[ $esp0 == "" ]];
+then
+    printf "*** Error - Could not find $disk0\n"
+    printf "*** Default Disk Volume name is "macOS"\n  - Provide your Volume name: $0 Volume \n"
+    exit 1
+fi
+printf "Disk Volume name is: $disk0\n"
 mntpt=$( espmount.bash $esp0 )
 mounted0=$?
+if [[ $mounted0 != 0 ]];
+then
+    printf "*** Error - Could not mount $disk0\n"
+    exit 1
+fi
 
-echo ESP is mounted here: $mntpt
+printf "ESP is mounted here: $mntpt\n"
 cd $mntpt
 sudo xattr -cr EFI
 
@@ -19,11 +37,26 @@ rm -rf EFI/CLOVER/*32*
 rm -rf EFI/CLOVER/tools/*32*
 
 model=`ioreg -l |grep RM,oem-table-id|grep -v device |awk '{print $6}'|sed -e's/"//g'`
+if [[ $model == "T420" ]];
+then
+    test -f /etc/rc.boot.d/70.disable_sleep_proxy_client.local && sudo rm /etc/rc.boot.d/70.disable_sleep_proxy_client.local
+    test -f /etc/rc.shutdown.d/80.save_nvram_plist.local       && sudo rm /etc/rc.shutdown.d/80.save_nvram_plist.local
+    rm -rf EFI/CLOVER/tools/*64U*
+else
     rm -rf EFI/CLOVER/tools/*64.efi*
+fi
 
+#rm -rf EFI/CLOVER/OEM
 rm -rf EFI/CLOVER/ROM
 rm -rf EFI/CLOVER/doc
 
+# remove BOOT for the Hacks
+if [[ -d EFI/CLOVER/OEM/H61N-USB3 ]]; 
+then
+    rm -rf EFI/BOOT
+fi
+
+# clean up for when info is in OEM
 if [[ -d EFI/CLOVER/OEM ]]; 
 then
     test -f EFI/CLOVER/config.plist && rm EFI/CLOVER/config.plist
@@ -39,6 +72,8 @@ fi
 # Use Other
 test -e EFI/CLOVER/drivers64UEFI/OsxAptioFixDrv-64.efi && mv EFI/CLOVER/drivers64UEFI/OsxAptioFixDrv-64.efi EFI/CLOVER/drivers64UEFI/OsxAptioFixDrv-64.efi.NotUsed
 
+# cp -a EFI-Backup/CLOVER/drivers64UEFI/NTFS-64.efi EFI/CLOVER/drivers64UEFI
+
 f=EFI/CLOVER/themes/ThinkPad 
 test -e $f && mv $f EFI/CLOVER/
 f=EFI/CLOVER/themes/BGM
@@ -52,4 +87,55 @@ test -e $f && mv $f EFI/CLOVER/themes
 f=EFI/CLOVER/BGM
 test -e $f && mv $f EFI/CLOVER/themes
 
+#cp -a EFI/CLOVER/config.gold.plist EFI/CLOVER/config.plist
+
+diff -rq $mntpt/EFI*|differ
+
+# patch for nvram save
+gNVRAMbuf=$(nvram -x -p)
+gEmuVariableName=emuvariable
+gEfiEmuVariableIsPresent="false"
+gLegacyEmuVariableIsPresent="false"
+if [[ `printf "${gNVRAMbuf}" |tr '[:upper:]' '[:lower:]'` == *"${gEmuVariableName}"* ]];
+then
+    gEfiEmuVariableIsPresent="true"
+else
+    gEFIFirmwareVendor=$(LC_ALL=C ioreg -l -pIODeviceTree | sed -nE 's@.*firmware-vendor.*<([0-9a-fA-F]*)>.*@\1@p' | xxd -r -p | tr '[:upper:]' '[:lower:]')
+    case "${gEFIFirmwareVendor}" in
+        *"clover"* | *"edk ii"* ) gLegacyEmuVariableIsPresent="true"
+                                  ;;
+        *                       )
+                                  ;;
+    esac
+fi
+
+if [[ "${gLegacyEmuVariableIsPresent}" == "true" || "${gEfiEmuVariableIsPresent}" == "true" ]];
+then
+
+printf "Looking for any patches to NVRAM save tools\n"
+# 
+patch=/etc/rc.shutdown.d/80.save_nvram_plist.fixed
+if [[ -e "$patch" ]];
+then
+    sudo cp -a "$patch" "${patch/fixed/local}"
+fi
+#
+patch=/etc/rc.boot.d/20.mount_ESP.fixed
+if [[ -e "$patch" ]];
+then
+    sudo cp -a "$patch" "${fixed/fixed/local}"
+fi
+#
+patch="/Library/Application Support/Clover/CloverDaemon_patch.txt"
+if [[ -e "$patch" ]];
+then
+    cd /Library/Application\ Support/Clover/
+    sudo patch -N CloverDaemon "${patch}"
+    sudo test -e CloverDaemon.rej && sudo rm CloverDaemon.rej
+    sudo defaults write com.apple.loginwindow LogoutHook "/Library/Application Support/Clover/CloverDaemon-stopservice"
+fi
+
+fi # end nvram patch
+
 test $mounted0 -eq 0 && espmount.bash -u $esp0
+exit 0

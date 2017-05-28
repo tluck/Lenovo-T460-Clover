@@ -18,14 +18,40 @@ DefinitionBlock ("", "SSDT", 2, "T460", "XHC", 0)
             Return(Local0)
         }
 
+// USB power properties via USBX device
+// these values are same as MacBookPro12,1
+/* this device and properties seem to be redundant with method below
+    Device(\_SB.USBX)
+    {
+        Name(_ADR, 0)
+        Method (_DSM, 4)
+        {
+            If (!Arg2) { Return (Buffer() { 0x03 } ) }
+            Return (Package()
+            {
+                "kUSBSleepPortCurrentLimit", 2100,
+                "kUSBSleepPowerSupply", 2600,
+                "kUSBWakePortCurrentLimit", 2100,
+                "kUSBWakePowerSupply", 3200,
+            })
+        }
+    }
+*/
 // USBInjectAll configuration/override for Lenovo T460
 // Override for USBInjectAll.kext - if UIAC exists, use it instead
-
     Device(UIAC)
     {
         Name(_HID, "UIA00000")
         Name(RMCF, Package()
         {
+            // USB Power Properties for Sierra (using USBInjectAll injection)
+            "AppleBusPowerControllerUSB", Package()
+            {
+                "kUSBSleepPortCurrentLimit", 2100,
+                "kUSBSleepPowerSupply", 2600,
+                "kUSBWakePortCurrentLimit", 2100,
+                "kUSBWakePowerSupply", 3200,
+            },
             // XHC overrides
             "8086_9d2f", Package()
             {

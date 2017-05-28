@@ -24,7 +24,7 @@ done
 
 bvs=$( system_profiler SPSoftwareDataType | grep Volume )
 bv=${bvs#*:}
-esp=$( diskutil list |grep "$bv "|awk '{print $6}'| sed -e's/s2//' -e's/disk//' )
+esp=$( diskutil list |grep "HFS${bv} "|awk '{print $6}'| sed -e's/s2//' -e's/disk//' )
 
 if [[ $n == $esp ]]; then
 	p=/Volumes/ESP
