@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>16D30a</string>
+	<string>16G8c</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>USBInjectAll</string>
 	<key>CFBundleGetInfoString</key>
-	<string>0.5.17 Copyright © 2015 RehabMan. All rights reserved.</string>
+	<string>0.6.0 Copyright © 2015 RehabMan. All rights reserved.</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.rehabman.driver.USBInjectAll</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.5.17</string>
+	<string>0.6.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -27,21 +27,21 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>0.5.17</string>
+	<string>0.6.0</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>8C1002</string>
+	<string>8E2002</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>16C58</string>
+	<string>16E185</string>
 	<key>DTSDKName</key>
 	<string>macosx10.12</string>
 	<key>DTXcode</key>
-	<string>0821</string>
+	<string>0832</string>
 	<key>DTXcodeBuild</key>
-	<string>8C1002</string>
+	<string>8E2002</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>ConfigurationData</key>
@@ -1572,6 +1572,19 @@
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 		</dict>
+		<key>MacBook8,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBook8,1</string>
+		</dict>
 		<key>MacBook8,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -1652,6 +1665,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBook8,1</string>
+		</dict>
+		<key>MacBook9,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBook9,1</string>
 		</dict>
 		<key>MacBook9,1-EH01</key>
 		<dict>
@@ -1734,6 +1760,19 @@
 			<key>model</key>
 			<string>MacBook9,1</string>
 		</dict>
+		<key>MacBookAir4,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookAir4,1</string>
+		</dict>
 		<key>MacBookAir4,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -1814,6 +1853,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookAir4,1</string>
+		</dict>
+		<key>MacBookAir4,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookAir4,2</string>
 		</dict>
 		<key>MacBookAir4,2-EH01</key>
 		<dict>
@@ -1896,6 +1948,19 @@
 			<key>model</key>
 			<string>MacBookAir4,2</string>
 		</dict>
+		<key>MacBookAir5,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookAir5,1</string>
+		</dict>
 		<key>MacBookAir5,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -1976,6 +2041,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookAir5,1</string>
+		</dict>
+		<key>MacBookAir5,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookAir5,2</string>
 		</dict>
 		<key>MacBookAir5,2-EH01</key>
 		<dict>
@@ -2058,6 +2136,19 @@
 			<key>model</key>
 			<string>MacBookAir5,2</string>
 		</dict>
+		<key>MacBookAir6,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookAir6,1</string>
+		</dict>
 		<key>MacBookAir6,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -2138,6 +2229,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookAir6,1</string>
+		</dict>
+		<key>MacBookAir6,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookAir6,2</string>
 		</dict>
 		<key>MacBookAir6,2-EH01</key>
 		<dict>
@@ -2220,6 +2324,19 @@
 			<key>model</key>
 			<string>MacBookAir6,2</string>
 		</dict>
+		<key>MacBookAir7,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookAir7,1</string>
+		</dict>
 		<key>MacBookAir7,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -2300,6 +2417,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookAir7,1</string>
+		</dict>
+		<key>MacBookAir7,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookAir7,2</string>
 		</dict>
 		<key>MacBookAir7,2-EH01</key>
 		<dict>
@@ -2382,6 +2512,19 @@
 			<key>model</key>
 			<string>MacBookAir7,2</string>
 		</dict>
+		<key>MacBookPro10,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro10,1</string>
+		</dict>
 		<key>MacBookPro10,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -2462,6 +2605,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro10,1</string>
+		</dict>
+		<key>MacBookPro11,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro11,1</string>
 		</dict>
 		<key>MacBookPro11,1-EH01</key>
 		<dict>
@@ -2544,6 +2700,19 @@
 			<key>model</key>
 			<string>MacBookPro11,1</string>
 		</dict>
+		<key>MacBookPro11,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro11,2</string>
+		</dict>
 		<key>MacBookPro11,2-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -2624,6 +2793,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro11,2</string>
+		</dict>
+		<key>MacBookPro11,3-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro11,3</string>
 		</dict>
 		<key>MacBookPro11,3-EH01</key>
 		<dict>
@@ -2706,6 +2888,19 @@
 			<key>model</key>
 			<string>MacBookPro11,3</string>
 		</dict>
+		<key>MacBookPro11,4-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro11,4</string>
+		</dict>
 		<key>MacBookPro11,4-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -2786,6 +2981,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro11,4</string>
+		</dict>
+		<key>MacBookPro11,5-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro11,5</string>
 		</dict>
 		<key>MacBookPro11,5-EH01</key>
 		<dict>
@@ -2868,6 +3076,19 @@
 			<key>model</key>
 			<string>MacBookPro11,5</string>
 		</dict>
+		<key>MacBookPro12,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro12,1</string>
+		</dict>
 		<key>MacBookPro12,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -2948,6 +3169,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro12,1</string>
+		</dict>
+		<key>MacBookPro12,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro12,2</string>
 		</dict>
 		<key>MacBookPro12,2-EH01</key>
 		<dict>
@@ -3030,6 +3264,19 @@
 			<key>model</key>
 			<string>MacBookPro12,2</string>
 		</dict>
+		<key>MacBookPro13,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro13,1</string>
+		</dict>
 		<key>MacBookPro13,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -3110,6 +3357,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro13,1</string>
+		</dict>
+		<key>MacBookPro13,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro13,2</string>
 		</dict>
 		<key>MacBookPro13,2-EH01</key>
 		<dict>
@@ -3192,6 +3452,19 @@
 			<key>model</key>
 			<string>MacBookPro13,2</string>
 		</dict>
+		<key>MacBookPro13,3-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro13,3</string>
+		</dict>
 		<key>MacBookPro13,3-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -3272,6 +3545,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro13,3</string>
+		</dict>
+		<key>MacBookPro6,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro6,1</string>
 		</dict>
 		<key>MacBookPro6,1-EH01</key>
 		<dict>
@@ -3354,6 +3640,19 @@
 			<key>model</key>
 			<string>MacBookPro6,1</string>
 		</dict>
+		<key>MacBookPro6,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro6,2</string>
+		</dict>
 		<key>MacBookPro6,2-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -3434,6 +3733,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro6,2</string>
+		</dict>
+		<key>MacBookPro7,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro7,1</string>
 		</dict>
 		<key>MacBookPro7,1-EH01</key>
 		<dict>
@@ -3516,6 +3828,19 @@
 			<key>model</key>
 			<string>MacBookPro7,1</string>
 		</dict>
+		<key>MacBookPro8,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro8,1</string>
+		</dict>
 		<key>MacBookPro8,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -3596,6 +3921,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro8,1</string>
+		</dict>
+		<key>MacBookPro8,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro8,2</string>
 		</dict>
 		<key>MacBookPro8,2-EH01</key>
 		<dict>
@@ -3678,6 +4016,19 @@
 			<key>model</key>
 			<string>MacBookPro8,2</string>
 		</dict>
+		<key>MacBookPro8,3-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro8,3</string>
+		</dict>
 		<key>MacBookPro8,3-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -3758,6 +4109,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro8,3</string>
+		</dict>
+		<key>MacBookPro9,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro9,1</string>
 		</dict>
 		<key>MacBookPro9,1-EH01</key>
 		<dict>
@@ -3840,6 +4204,19 @@
 			<key>model</key>
 			<string>MacBookPro9,1</string>
 		</dict>
+		<key>MacBookPro9,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookPro9,2</string>
+		</dict>
 		<key>MacBookPro9,2-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -3920,6 +4297,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacBookPro9,2</string>
+		</dict>
+		<key>MacBookpro10,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacBookpro10,2</string>
 		</dict>
 		<key>MacBookpro10,2-EH01</key>
 		<dict>
@@ -4002,6 +4392,19 @@
 			<key>model</key>
 			<string>MacBookpro10,2</string>
 		</dict>
+		<key>MacPro3,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacPro3,1</string>
+		</dict>
 		<key>MacPro3,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -4082,6 +4485,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacPro3,1</string>
+		</dict>
+		<key>MacPro4,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacPro4,1</string>
 		</dict>
 		<key>MacPro4,1-EH01</key>
 		<dict>
@@ -4164,6 +4580,19 @@
 			<key>model</key>
 			<string>MacPro4,1</string>
 		</dict>
+		<key>MacPro5,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacPro5,1</string>
+		</dict>
 		<key>MacPro5,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -4244,6 +4673,19 @@
 			<true/>
 			<key>model</key>
 			<string>MacPro5,1</string>
+		</dict>
+		<key>MacPro6,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>MacPro6,1</string>
 		</dict>
 		<key>MacPro6,1-EH01</key>
 		<dict>
@@ -4326,6 +4768,19 @@
 			<key>model</key>
 			<string>MacPro6,1</string>
 		</dict>
+		<key>Macmini5,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>Macmini5,1</string>
+		</dict>
 		<key>Macmini5,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -4406,6 +4861,19 @@
 			<true/>
 			<key>model</key>
 			<string>Macmini5,1</string>
+		</dict>
+		<key>Macmini5,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>Macmini5,2</string>
 		</dict>
 		<key>Macmini5,2-EH01</key>
 		<dict>
@@ -4488,6 +4956,19 @@
 			<key>model</key>
 			<string>Macmini5,2</string>
 		</dict>
+		<key>Macmini5,3-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>Macmini5,3</string>
+		</dict>
 		<key>Macmini5,3-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -4568,6 +5049,19 @@
 			<true/>
 			<key>model</key>
 			<string>Macmini5,3</string>
+		</dict>
+		<key>Macmini6,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>Macmini6,1</string>
 		</dict>
 		<key>Macmini6,1-EH01</key>
 		<dict>
@@ -4650,6 +5144,19 @@
 			<key>model</key>
 			<string>Macmini6,1</string>
 		</dict>
+		<key>Macmini6,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>Macmini6,2</string>
+		</dict>
 		<key>Macmini6,2-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -4730,6 +5237,19 @@
 			<true/>
 			<key>model</key>
 			<string>Macmini6,2</string>
+		</dict>
+		<key>Macmini7,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>Macmini7,1</string>
 		</dict>
 		<key>Macmini7,1-EH01</key>
 		<dict>
@@ -4812,6 +5332,19 @@
 			<key>model</key>
 			<string>Macmini7,1</string>
 		</dict>
+		<key>iMac10,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac10,1</string>
+		</dict>
 		<key>iMac10,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -4892,6 +5425,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac10,1</string>
+		</dict>
+		<key>iMac11,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac11,1</string>
 		</dict>
 		<key>iMac11,1-EH01</key>
 		<dict>
@@ -4974,6 +5520,19 @@
 			<key>model</key>
 			<string>iMac11,1</string>
 		</dict>
+		<key>iMac11,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac11,2</string>
+		</dict>
 		<key>iMac11,2-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -5054,6 +5613,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac11,2</string>
+		</dict>
+		<key>iMac11,3-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac11,3</string>
 		</dict>
 		<key>iMac11,3-EH01</key>
 		<dict>
@@ -5136,6 +5708,19 @@
 			<key>model</key>
 			<string>iMac11,3</string>
 		</dict>
+		<key>iMac12,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac12,1</string>
+		</dict>
 		<key>iMac12,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -5216,6 +5801,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac12,1</string>
+		</dict>
+		<key>iMac12,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac12,2</string>
 		</dict>
 		<key>iMac12,2-EH01</key>
 		<dict>
@@ -5298,6 +5896,19 @@
 			<key>model</key>
 			<string>iMac12,2</string>
 		</dict>
+		<key>iMac13,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac13,1</string>
+		</dict>
 		<key>iMac13,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -5378,6 +5989,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac13,1</string>
+		</dict>
+		<key>iMac13,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac13,2</string>
 		</dict>
 		<key>iMac13,2-EH01</key>
 		<dict>
@@ -5460,6 +6084,19 @@
 			<key>model</key>
 			<string>iMac13,2</string>
 		</dict>
+		<key>iMac14,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac14,1</string>
+		</dict>
 		<key>iMac14,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -5540,6 +6177,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac14,1</string>
+		</dict>
+		<key>iMac14,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac14,2</string>
 		</dict>
 		<key>iMac14,2-EH01</key>
 		<dict>
@@ -5622,6 +6272,19 @@
 			<key>model</key>
 			<string>iMac14,2</string>
 		</dict>
+		<key>iMac14,3-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac14,3</string>
+		</dict>
 		<key>iMac14,3-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -5702,6 +6365,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac14,3</string>
+		</dict>
+		<key>iMac15,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac15,1</string>
 		</dict>
 		<key>iMac15,1-EH01</key>
 		<dict>
@@ -5784,6 +6460,19 @@
 			<key>model</key>
 			<string>iMac15,1</string>
 		</dict>
+		<key>iMac16,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac16,1</string>
+		</dict>
 		<key>iMac16,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -5864,6 +6553,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac16,1</string>
+		</dict>
+		<key>iMac16,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac16,2</string>
 		</dict>
 		<key>iMac16,2-EH01</key>
 		<dict>
@@ -5946,6 +6648,19 @@
 			<key>model</key>
 			<string>iMac16,2</string>
 		</dict>
+		<key>iMac17,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac17,1</string>
+		</dict>
 		<key>iMac17,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -6026,6 +6741,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac17,1</string>
+		</dict>
+		<key>iMac4,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac4,1</string>
 		</dict>
 		<key>iMac4,1-EH01</key>
 		<dict>
@@ -6108,6 +6836,19 @@
 			<key>model</key>
 			<string>iMac4,1</string>
 		</dict>
+		<key>iMac4,2-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac4,2</string>
+		</dict>
 		<key>iMac4,2-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -6188,6 +6929,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac4,2</string>
+		</dict>
+		<key>iMac5,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac5,1</string>
 		</dict>
 		<key>iMac5,1-EH01</key>
 		<dict>
@@ -6270,6 +7024,19 @@
 			<key>model</key>
 			<string>iMac5,1</string>
 		</dict>
+		<key>iMac6,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac6,1</string>
+		</dict>
 		<key>iMac6,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -6350,6 +7117,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac6,1</string>
+		</dict>
+		<key>iMac7,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac7,1</string>
 		</dict>
 		<key>iMac7,1-EH01</key>
 		<dict>
@@ -6432,6 +7212,19 @@
 			<key>model</key>
 			<string>iMac7,1</string>
 		</dict>
+		<key>iMac8,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac8,1</string>
+		</dict>
 		<key>iMac8,1-EH01</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -6512,6 +7305,19 @@
 			<true/>
 			<key>model</key>
 			<string>iMac8,1</string>
+		</dict>
+		<key>iMac9,1-AppeBusPowerControllerUSB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.rehabman.driver.USBInjectAll</string>
+			<key>IOClass</key>
+			<string>org_rehabman_USBInjectAll</string>
+			<key>IOProviderClass</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>kConfigurationName</key>
+			<string>AppleBusPowerControllerUSB</string>
+			<key>model</key>
+			<string>iMac9,1</string>
 		</dict>
 		<key>iMac9,1-EH01</key>
 		<dict>
