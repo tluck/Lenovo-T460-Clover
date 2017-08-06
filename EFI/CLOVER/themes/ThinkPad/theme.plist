@@ -49,7 +49,7 @@
 			<key>Big</key>
 			<string>Selection_big.png</string>
 			<key>Color</key>
-			<string>0x07ABF750</string>
+			<string>0xBB0000AA</string>
 			<key>Small</key>
 			<string>Selection_small.png</string>
 		</dict>
