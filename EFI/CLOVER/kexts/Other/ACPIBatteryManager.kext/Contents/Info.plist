@@ -74,15 +74,15 @@
 				<key>StartupDelay</key>
 				<integer>0</integer>
 				<key>UseDesignVoltageForCurrentCapacity</key>
-				<true/>
+				<false/>
 				<key>UseDesignVoltageForDesignCapacity</key>
-				<true/>
+				<false/>
 				<key>UseDesignVoltageForMaxCapacity</key>
-				<true/>
+				<false/>
 				<key>UseExtendedBatteryInformationMethod</key>
-				<true/>
+				<false/>
 				<key>UseExtraBatteryInformationMethod</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>IOClass</key>
 			<string>rehab_ACPIBatteryManager</string>
