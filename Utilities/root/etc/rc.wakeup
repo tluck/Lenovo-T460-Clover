@@ -7,26 +7,26 @@ kextload  /Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS
 
 #ethd=$( networksetup -listallhardwareports | awk '$3=="Ethernet" {getline; print $2}')
 # if ethd was Enabled before sleep - renable it ie turn back on 
-if [[ -f /tmp/eth.status.txt ]]
+if [[ -f /var/tmp/eth.status.txt ]]
 then
-status=$(cat /tmp/eth.status.txt)
+status=$(cat /var/tmp/eth.status.txt)
 	if [[ $status == "Enabled" ]]
 	then
 	networksetup -setnetworkserviceenabled Ethernet on
 	fi
-rm /tmp/eth.status.txt
+rm /var/tmp/eth.status.txt
 fi
 
 # if ethd was Enabled before sleep - renable it ie turn back on 
-if [[ -f /tmp/wifi.status.txt ]]
+if [[ -f /var/tmp/wifi.status.txt ]]
 then
-status=$(cat /tmp/wifi.status.txt)
+status=$(cat /var/tmp/wifi.status.txt)
 	if [[ ${status##*: } == "On" ]]
 	then
 	wifi=$( networksetup -listallhardwareports | awk '$3=="Wi-Fi"    {getline; print $2}')
 	(sleep 1; networksetup -setairportpower $wifi on ) &
 	fi
-rm /tmp/wifi.status.txt
+rm /var/tmp/wifi.status.txt
 fi
 
 exit 
