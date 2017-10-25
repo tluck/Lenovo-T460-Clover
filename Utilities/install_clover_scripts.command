@@ -25,15 +25,22 @@ done
 
 fixed="root/Library/Application Support/Clover/CloverDaemon-stopservice"
 patch="/Library/Application Support/Clover/CloverDaemon-stopservice"
-patchd="/Library/Application Support/Clover/"
+patchd="/Library/Application Support/Clover"
 if [[ -e "$fixed" ]];
 then
-    echo Installing CloverDaemon Scripts in $patched
+    echo Installing CloverDaemon Scripts in "$patchd"
     sudo mkdir "$patchd" 2> /dev/null
-    sudo cp -r "root/$patchd" "$patchd"
+    sudo cp -R "root/$patchd/" "$patchd"
 
     echo Setting LogoutHook to $patch - runs rc.shutdown.d scripts for Logout or Shutdown
     sudo defaults write com.apple.loginwindow LogoutHook "${patch}"
+fi
+
+patch="/etc/rc.boot.d/50.network.local"
+if [[ -e "$patch" ]];
+then
+    echo Setting LoginHook to $patch - runs rc.boot.d script for Login
+    sudo defaults write com.apple.loginwindow Login "${patch}"
 fi
 
 echo "Installing LaunchDaemon for Startup Scripts"
