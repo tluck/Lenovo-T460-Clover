@@ -101,7 +101,7 @@ function _findESP()
     for ((i=0; i<${#gDisk[@]}; ++i))
     do
       local gESP=""
-      plist=$( diskutil list -plist "/dev/${gDisk[i]}" 2>/dev/null )
+      local plist=$( diskutil list -plist "/dev/${gDisk[i]}" 2> /dev/null )
 
       for ((part=0; 1; part++)); 
       do
@@ -112,7 +112,7 @@ function _findESP()
             fi
             if [[ "$content" == "EFI" ]]; 
             then
-                gESP=$( /usr/libexec/PlistBuddy -c "Print :AllDisksAndPartitions:0:Partitions:$part:DeviceIdentifier"  /dev/stdin <<< $plist 2>&1 )
+                gESP=$( /usr/libexec/PlistBuddy -c "Print :AllDisksAndPartitions:0:Partitions:$part:DeviceIdentifier" /dev/stdin <<< $plist 2>&1 )
                 break
             fi
       done
