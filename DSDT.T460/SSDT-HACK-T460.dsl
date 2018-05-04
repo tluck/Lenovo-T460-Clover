@@ -2,6 +2,7 @@ DefinitionBlock ("", "SSDT", 2, "T460", "HACK", 0x00000000)
 {
     External (\_SB.PCI0, DeviceObj)    // (from opcode)
     External (\_SB.PCI0.LPC, DeviceObj)    // (from opcode)
+    External (\_SB.PCI0.XHC.PMEE, FieldUnitObj)
     External (\_SI._SST, MethodObj)    // 1 Arguments (from opcode)
     External (ZPTS, MethodObj)    // 1 Arguments (from opcode)
     External (ZWAK, MethodObj)    // 1 Arguments (from opcode)
@@ -10,6 +11,8 @@ DefinitionBlock ("", "SSDT", 2, "T460", "HACK", 0x00000000)
     {
         If (0x05 == Arg0)
         {
+// fix "auto start after shutdown"
+            \_SB.PCI0.XHC.PMEE = 0
             Return (Zero)
         }
 
