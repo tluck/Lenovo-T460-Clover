@@ -343,7 +343,7 @@
 				<key>MatchOS</key>
 				<string>10.11.x</string>
 				<key>Name</key>
-				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				QTnE6yo=
@@ -361,7 +361,7 @@
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
-				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				iUXIOcbrUQ==
@@ -377,7 +377,7 @@
 				AAAIAAIAAACYAAAA
 				</data>
 				<key>Name</key>
-				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				AAAIAAQAAACYAAAA
@@ -393,7 +393,7 @@
 				bAUAAGwFAAA=
 				</data>
 				<key>Name</key>
-				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				6AMAAOgDAAA=
@@ -409,7 +409,7 @@
 				AQUJAAAEAACHAQAA
 				</data>
 				<key>Name</key>
-				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				AQUJAAAIAACHAQAA
@@ -425,7 +425,7 @@
 				AgQKAAAEAACHAQAA
 				</data>
 				<key>Name</key>
-				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				AgQKAAAIAACHAQAA
@@ -441,7 +441,7 @@
 				hBnUEQ==
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
 				<data>
 				kwLsEA==
@@ -457,7 +457,7 @@
 				hAjsEA==
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
 				<data>
 				AAAAAA==
@@ -473,7 +473,7 @@
 				hQjsEA==
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
 				<data>
 				AAAAAA==
@@ -489,7 +489,7 @@
 				gxnUEQ==
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
 				<data>
 				AAAAAA==
@@ -505,7 +505,7 @@
 				QcYGAEmLvCQ=
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
 				<data>
 				QcYGAUmLvCQ=
@@ -521,7 +521,7 @@
 				QcYGAEiLu2g=
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
 				<data>
 				QcYGAUiLu2g=
@@ -537,7 +537,7 @@
 				QcaGQwEAAAA=
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
 				<data>
 				QcaGQwEAAAE=
@@ -643,7 +643,7 @@
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				gflSqgAAZpA=
@@ -661,7 +661,7 @@
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				QTnEZpA=
@@ -679,7 +679,7 @@
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				QQ+3zTnBZpA=
@@ -697,7 +697,7 @@
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				g33EBGaQ
@@ -715,7 +715,7 @@
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				Mdv/w5CQkJA=
@@ -733,7 +733,7 @@
 				<key>MatchOS</key>
 				<string>10.11.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				Mdv/w5CQkJA=
@@ -751,7 +751,7 @@
 				<key>MatchOS</key>
 				<string>10.11.x,10.12.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				axAAAJCQ
@@ -769,7 +769,7 @@
 				<key>MatchOS</key>
 				<string>10.11.x,10.12.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				ZscGVVPrKw==
@@ -787,7 +787,7 @@
 				<key>MatchOS</key>
 				<string>10.11.x,10.12.x</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				ZscGI2HrKw==
@@ -805,7 +805,7 @@
 				<key>MatchOS</key>
 				<string>10.12</string>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Replace</key>
 				<data>
 				ZscGREXrKw==
