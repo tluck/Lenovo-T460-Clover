@@ -1,0 +1,20 @@
+#Maintained by: shmilee
+# sleep related T450 (LED blink)
+
+# remove dumb code from \_WAK
+into method label \_WAK code_regex If.*LOr.*Equal.*Arg0.*LGreaterEqual.*Arg0.*0x05.*\n.*\{\n.*Return.*WAKI.*\n.*\} remove_matched;
+
+# remove patch, if added before
+into method label \_WAK code_regex \n\s+If\s\(LEqual\s\(Arg0,3\)\)\n\s+\{\n\s+\\_SI._SST.*\n\s+\}\n remove_matched;
+
+# add patch
+into method label \_WAK code_regex (.*Return\s+\(.*) replace_matched
+begin
+\n
+        If (LEqual (Arg0,3))\n
+        {\n
+            \\_SI._SST (0x01)\n
+        }\n
+\n
+%1
+end;

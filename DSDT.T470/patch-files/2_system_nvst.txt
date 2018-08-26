@@ -1,0 +1,18 @@
+# _Q2B - enable LID Sleep
+into method label NVST code_regex ([\s\S]*) replace_matched
+begin
+                        Noop\n
+end;
+into method label DYTC code_regex ([\s\S]*) replace_matched
+begin
+                        Noop\n
+end;
+into method label _Q3C code_regex ([\s\S]*) replace_matched
+begin
+                        Noop\n
+end;
+into method label _Q3E code_regex ([\s\S]*) replace_matched
+begin
+                        Noop\n
+end;
+// EOF
