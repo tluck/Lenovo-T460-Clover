@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-1-PerfTune.aml, Mon Aug 20 15:50:53 2018
+ * Disassembly of SSDT-1-PerfTune.aml, Tue Sep 18 11:48:08 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"

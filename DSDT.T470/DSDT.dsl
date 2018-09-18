@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Mon Aug 20 15:50:54 2018
+ * Disassembly of DSDT.aml, Tue Sep 18 11:48:09 2018
  *
  * Original Table Header:
  *     Signature        "DSDT"
@@ -4634,6 +4634,20 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
                 Offset (0xDC), 
                     ,   2, 
                 ESPI,   1
+            }
+            Device (SMCD)
+            {
+                Name (_HID, "MON0000")  // _HID: Hardware ID
+                Method (FAN0, 0, NotSerialized)
+                {
+                    Store (B1B2 (\_SB.PCI0.LPCB.EC.HFN1, \_SB.PCI0.LPCB.EC.HFN2), Local0)
+                    Return (Local0)
+                }
+                Method (TCPU, 0, NotSerialized)
+                {
+                    Store (\_SB.PCI0.LPCB.EC.TMP0, Local0)
+                    Return (Local0)
+                }
             }
             Method (_DSM, 4, NotSerialized)
             {
