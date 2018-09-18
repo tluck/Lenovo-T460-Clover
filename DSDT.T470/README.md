@@ -1,5 +1,5 @@
 These Are my notes on getting my Lenovo T470 [I5-6300u / HD520 /
-1920x1080] woring perfectly with TLUK's T460 git repo.
+1920x1080] woring perfectly with TLUCK's T460 git repo.
 
 This was all done with High Sierra 10.13.3 and update to 10.13.6
 
@@ -40,7 +40,9 @@ My DSDT pathes are:
    4_misc_Skylake-LPC.txt
    4_system_Mutex.txt
 
-Note the 2_battery_Lenovo-X220.txt has a few changes from the vanilla path in RehabMan's repo. 
+Note the 2_battery_Lenovo-X220.txt has a few changes from the vanilla
+path in RehabMan's repo. I adding in a small part of the original patch
+from TLUCK to enable fan reporting.
 
 The DDST battery patch in combination with the SSDT-BATC patch from
 RehabMan's repo gave me a great battery indicator that is an aggregate
@@ -59,7 +61,23 @@ My add on SSDT patches are:
    SSDT-LPC-T470.dsl
    SSDT-PNLF-T460.dsl
    SSDT-SMBUS-T460.dsl
-   SSDT-XHC-T460.dsl
+   SSDT-XHC-T470.dsl
    SSDT-XOSI.dsl
 
-Also included is my config.plist. 
+I have included is my config.plist and the added kexts in my
+/Library/Extensions are:
+
+drwxr-xr-x@ 3 root  wheel  102 Aug  9 17:08 AppleALC.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug  9 17:08 VoodooPS2Controller.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 13 06:54 Lilu.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 13 07:06 WhateverGreen.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 ACPIBatteryManager.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 FakeSMC.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 IntelMausiEthernet.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 USBInjectAll.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 X86PlatformPluginInjector.kext
+drwxr-xr-x  3 root  wheel  102 Aug 16 14:32 AppleBacklightInjector.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 29 15:51 FakePCIID_Broadcom_WiFi.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 29 15:51 FakePCIID.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 29 15:51 BrcmPatchRAM2.kext
+drwxr-xr-x@ 3 root  wheel  102 Aug 29 15:51 BrcmFirmwareRepo.kext
