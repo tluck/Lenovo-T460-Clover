@@ -157,9 +157,9 @@
             <key>Generate</key>
             <dict>
                <key>CStates</key>
-               <true/>
+               <false/>
                <key>PStates</key>
-               <true/>
+               <false/>
             </dict>
          </dict>
       </dict>
@@ -194,7 +194,7 @@
          <key>Audio</key>
          <dict>
             <key>Inject</key>
-            <integer>29</integer>
+            <integer>3</integer>
          </dict>
          <key>FakeID</key>
          <dict>
@@ -263,6 +263,10 @@
                </dict>
             </array>
          </dict>
+         <key>Hide</key>
+         <array>
+            <string>Preboot</string>
+         </array>
          <key>Mouse</key>
          <dict>
             <key>Enabled</key>
@@ -340,165 +344,6 @@
          <key>KextsToPatch</key>
          <array>
             <dict>
-               <key>Comment</key>
-               <string>Skylake minStolenSize patch less or equal fStolenMemorySize assertion, 10.11.4 - based on Austere.J patch</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>QTnEdio=</data>
-               <key>MatchOS</key>
-               <string>10.11.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
-               <key>Replace</key>
-               <data>QTnE6yo=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>Skylake minStolenSize patch (credit RehabMan based on original by Austere.J) for Sierra</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>iUXIOcZ2UQ==</data>
-               <key>MatchOS</key>
-               <string>10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
-               <key>Replace</key>
-               <data>iUXIOcbrUQ==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>Framebuffer - eDP</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>AAAIAAIAAACYAAAA</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
-               <key>Replace</key>
-               <data>AAAIAAQAAACYAAAA</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>Framebuffer - brightness</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>bAUAAGwFAAA=</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
-               <key>Replace</key>
-               <data>6AMAAOgDAAA=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>HDMI-audio, port 0105, 0x19160000 - T460 DP on left side</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>AQUJAAAEAACHAQAA</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
-               <key>Replace</key>
-               <data>AQUJAAAIAACHAQAA</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>HDMI-audio, port 0204, 0x19160000 - T460 HDMI on right side</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>AgQKAAAEAACHAQAA</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
-               <key>Replace</key>
-               <data>AgQKAAAIAACHAQAA</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>ALC 293 #1</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>hBnUEQ==</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleHDA</string>
-               <key>Replace</key>
-               <data>kwLsEA==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>ALC 293 #2</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>hAjsEA==</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleHDA</string>
-               <key>Replace</key>
-               <data>AAAAAA==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>ALC 293 #3</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>hQjsEA==</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleHDA</string>
-               <key>Replace</key>
-               <data>AAAAAA==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>ALC 293 #4</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>gxnUEQ==</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleHDA</string>
-               <key>Replace</key>
-               <data>AAAAAA==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>ALC 293 #5</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>QcYGAEmLvCQ=</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleHDA</string>
-               <key>Replace</key>
-               <data>QcYGAUmLvCQ=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>ALC 293 #6</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>QcYGAEiLu2g=</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleHDA</string>
-               <key>Replace</key>
-               <data>QcYGAUiLu2g=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>ALC 293 #7</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>QcaGQwEAAAA=</data>
-               <key>Name</key>
-               <string>com.apple.driver.AppleHDA</string>
-               <key>Replace</key>
-               <data>QcaGQwEAAAE=</data>
-            </dict>
             <dict>
                <key>Comment</key>
                <string>change 15 port limit to 26 in XHCI kext (100-series)</string>
@@ -554,20 +399,6 @@
                <string>IOAHCIBlockStorage</string>
                <key>Replace</key>
                <data>AAAAAAAAAAAAAAA=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>Boot graphics glitch, 10.12.dp1 (credit denskop)</string>
-               <key>Disabled</key>
-               <false/>
-               <key>Find</key>
-               <data>AQAAdSU=</data>
-               <key>MatchOS</key>
-               <string>10.12.x</string>
-               <key>Name</key>
-               <string>IOGraphicsFamily</string>
-               <key>Replace</key>
-               <data>AQAA6yU=</data>
             </dict>
             <dict>
                <key>Comment</key>
@@ -680,48 +511,6 @@
                <string>com.apple.driver.AirPort.Brcm4360</string>
                <key>Replace</key>
                <data>axAAAJCQ</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94325 - 10.10.2+ 5Ghz US FCC, the-darkvoid</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>QYP8/3QsSA==</data>
-               <key>MatchOS</key>
-               <string>10.11.x,10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>ZscGVVPrKw==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - 5Ghz US FCC - alternate from Ramalama</string>
-               <key>Disabled</key>
-               <false/>
-               <key>Find</key>
-               <data>QYP8/3QsSA==</data>
-               <key>MatchOS</key>
-               <string>10.11.x,10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>ZscGI2HrKw==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - 5 GHz DE</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>QYP8/3QsSA==</data>
-               <key>MatchOS</key>
-               <string>10.12</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>ZscGREXrKw==</data>
             </dict>
             <dict>
                <key>Comment</key>
