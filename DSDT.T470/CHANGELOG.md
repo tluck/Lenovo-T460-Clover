@@ -47,6 +47,8 @@
 
       remove inject intel
 
+      disable CState/PState
+
       add properties to config graphics per Whatevergreen:
 
          <key>Properties</key>
