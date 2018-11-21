@@ -6,23 +6,23 @@
       <dict>
          <key>DSDT</key>
          <dict>
-	    <key>Fixes</key>
-	    <dict>
-	       <key>FIX_RTC_20000</key>
-	       <true/>
-	       <key>FIX_TMR_40000</key>
-	       <true/>
-	       <key>FixHPET_0010</key>
-	       <true/>
-	       <key>FixIPIC_0040</key>
-	       <true/>
-	       <key>FixRegions_10000000</key>
-	       <false/>
-	       <key>FixShutdown_0004</key>
-	       <false/>
-	       <key>NewWay_80000000</key>
-	       <true/>
-	    </dict>
+            <key>Fixes</key>
+            <dict>
+               <key>FIX_RTC_20000</key>
+               <true/>
+               <key>FIX_TMR_40000</key>
+               <true/>
+               <key>FixHPET_0010</key>
+               <true/>
+               <key>FixIPIC_0040</key>
+               <true/>
+               <key>FixRegions_10000000</key>
+               <false/>
+               <key>FixShutdown_0004</key>
+               <false/>
+               <key>NewWay_80000000</key>
+               <true/>
+            </dict>
             <key>Patches</key>
             <array>
                <dict>
@@ -85,6 +85,16 @@
                   <key>Replace</key>
                   <data>WlBUUwE=</data>
                </dict>
+	       <dict>
+		  <key>Comment</key>
+		  <string>change XHC1 to XHC</string>
+                  <key>Disabled</key>
+                  <true/>
+		  <key>Find</key>
+		  <data>WEhDMQ==</data>
+		  <key>Replace</key>
+		  <data>WEhDXw==</data>
+	       </dict>
                <dict>
                   <key>Comment</key>
                   <string>change _WAK to ZWAK (T460)</string>
@@ -242,7 +252,7 @@
             <key>FixOwnership</key>
             <false/>
             <key>Inject</key>
-            <true/>
+            <false/>
          </dict>
       </dict>
       <key>GUI</key>
@@ -330,20 +340,19 @@
                <key>Replace</key>
                <data>igKEwOtE</data>
             </dict>
-	    <dict>
-	       <key>Comment</key>
-	       <string>Disable panic kext logging on 10.14 release kernel (credit Vandroiy)</string>
-	       <key>MatchOS</key>
-	       <string>10.14.x</string>
-	       <key>Find</key>
-	       <data>igKEwHRC</data>
-	       <key>Replace</key>
-	       <data>igKEwOtC</data>
-	    </dict>
+            <dict>
+               <key>Comment</key>
+               <string>Disable panic kext logging on 10.14 release kernel (credit Vandroiy)</string>
+               <key>MatchOS</key>
+               <string>10.14.x</string>
+               <key>Find</key>
+               <data>igKEwHRC</data>
+               <key>Replace</key>
+               <data>igKEwOtC</data>
+            </dict>
          </array>
          <key>KextsToPatch</key>
          <array>
-            <dict>
             <dict>
                <key>Comment</key>
                <string>change 15 port limit to 26 in XHCI kext (100-series)</string>
@@ -388,6 +397,34 @@
                <key>Replace</key>
                <data>g32ID5CQkJCQkA==</data>
             </dict>
+	    <dict>
+	       <key>Comment</key>
+	       <string>disable port limit in XHCI kext (credit PMHeart)</string>
+	       <key>MatchOS</key>
+	       <string>10.14.0</string>
+	       <key>Name</key>
+	       <string>com.apple.driver.usb.AppleUSBXHCI</string>
+               <key>Disabled</key>
+               <true/>
+	       <key>Find</key>
+	       <data>g/sPD4MDBQAA</data>
+	       <key>Replace</key>
+	       <data>g/sPkJCQkJCQ</data>
+	    </dict>
+	    <dict>
+	       <key>Comment</key>
+	       <string>disable port limit in XHCI kext (credit DalianSky,Ricky)</string>
+	       <key>MatchOS</key>
+	       <string>10.14.1,10.14.2</string>
+	       <key>Name</key>
+	       <string>com.apple.driver.usb.AppleUSBXHCI</string>
+               <key>Disabled</key>
+               <true/>
+	       <key>Find</key>
+	       <data>g/sPD4OPBAAA</data>
+	       <key>Replace</key>
+	       <data>g/sPkJCQkJCQ</data>
+	    </dict>
             <dict>
                <key>Comment</key>
                <string>Enable TRIM for non-Apple SSDs</string>

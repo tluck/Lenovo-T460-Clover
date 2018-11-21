@@ -6,6 +6,7 @@
 
    1. updated Clover to 4760 per TLUCKS repo
 
+
       sjk$ ls -1s /Volumes/ESP/EFI/CLOVER/drivers64UEFI/*.efi
         34 /Volumes/ESP/EFI/CLOVER/drivers64UEFI/AppleImageCodec-64.efi
         23 /Volumes/ESP/EFI/CLOVER/drivers64UEFI/AppleImageLoader-64.efi
@@ -36,6 +37,7 @@
       FakePCIID_Broadcom_WiFi.kext            Rehabman   - 1.3.13
       FakePCIID.kext                          Rehabman   - 1.3.13
       VoodooPS2Controller.kext                Rehabman   - 1.8.32 *
+      USBInjectAll.kext                       Rehabman   - 0.6.5
 
       * I tried the latest VoodoPS2Controller.kext -- It causes a KP on sleep. 
 
@@ -85,3 +87,6 @@
                </data>
             </dict>
          </dict>
+
+
+* Updated to Mojave 10.14.1 with no issues. (2018-11-10)
