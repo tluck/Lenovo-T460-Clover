@@ -104,32 +104,12 @@ into device label EC code_regex SBAC,\s+16 replace_matched begin BAC0,8,BAC1,8 e
 into device label EC code_regex SBCC,\s+16 replace_matched begin BCC0,8,BCC1,8 end;
 
 # this one is fan related
-# (sjk) -- removed
+#(sjk) -- removed
 #into device label EC code_regex HFN1,\s+16 replace_matched begin FN10,8,FN11,8 end;
-# (sjk) added 
+#(sjk) added 
 into device label EC code_regex HSPD,\s+16 replace_matched begin HFN1,8,HFN2,8 end;
-into device label LPCB insert
-begin
-                Device (SMCD)\n
-                {\n
-                    Name (_HID, "MON0000")  // _HID: Hardware ID\n
-                    Method (FAN0, 0, NotSerialized)\n
-                    {\n
-                        Store (B1B2 (\_SB.PCI0.LPCB.EC.HFN1, \_SB.PCI0.LPCB.EC.HFN2), Local0)\n
-                        Return (Local0)\n
-                    }\n
-\n
-                    Method (TCPU, 0, NotSerialized)\n
-                    {\n
-                        Store (\_SB.PCI0.LPCB.EC.TMP0, Local0)\n
-                        Return (Local0)\n
-                    }\n
-                }\n
-end;
-
 # might also be fan related
-# (sjk) -- removed
-#into device label EC code_regex HSPD,\s+16 replace_matched begin SPD0,8,SPD1,8 end;
+into device label EC code_regex HSPD,\s+16 replace_matched begin SPD0,8,SPD1,8 end;
 
 # this one is sleep related
 into device label EC code_regex HWAK,\s+16 replace_matched begin WAK0,8,WAK1,8 end;
