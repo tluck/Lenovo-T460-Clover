@@ -160,16 +160,16 @@ DefinitionBlock ("", "SSDT", 2, "T470", "XHC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 16, 0, 0, 0 },
                     },
-//                    "SS05", Package()    // USB-c
-//                    {
-//                        "UsbConnector", 3,
-//                        "port", Buffer() { 17, 0, 0, 0 },
-//                    },
-//                    "SS06", Package()    // Nothing
-//                    {
-//                        "UsbConnector", 3,
-//                        "port", Buffer() { 22, 0, 0, 0 },
-//                    },
+                    "SS05", Package()    // USB-c
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 17, 0, 0, 0 },
+                    },
+                    "SS06", Package()    // Nothing
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 22, 0, 0, 0 },
+                    },
 //                    "SS07", Package()    // Nothing
 //                    {
 //                        "UsbConnector", 3,
