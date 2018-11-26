@@ -1,11 +1,18 @@
 These Are my notes on getting my Lenovo T470 [I5-6300u / HD520 /
-1920x1080] woring perfectly with TLUCK's T460 git repo.
+1920x1080] working perfectly with TLUCK's T460 git repo.
 
-This was all done with High Sierra 10.13.3 and update to 10.13.6
+This was all done with High Sierra 10.13.3 and update to 10.13.6, then
+update to 10.14.0 and 10.14.1.
 
 I build my whole system on a 64GB Transcend Jetflash 3.1 USB thumb
-drive. Stability seems very good, so I am about to move my system to
-my SSD, and my default linux system to a bootable USB for backup.
+drive. Stability seems very good, so I moved my system to my SSD.
+
+NOTE: as of Mojave (10.14.x) APFS is required, and the install
+converts the boot filesystem to APFS. This has no implications for my
+boot SSD, all works great. However, I am unable to put a full Mojave
+installation on a USB thum drive. It locks up at the white Apple, and
+does not boot. I will continue to work on this as I like to keep a
+full up-to-date system on a thumb drive for experimentation.
 
 Many thanks to TLUCK for his original git repository of T460
 configuration files [https://github.com/tluck/Lenovo-T460-Clover].
@@ -57,7 +64,6 @@ My add on SSDT patches are:
    SSDT-CPU.dsl
    SSDT-HACK-T470.dsl
    SSDT-HDEF-T460.dsl
-   SSDT-IGPU-T460.dsl
    SSDT-LPC-T470.dsl
    SSDT-PNLF-T460.dsl
    SSDT-SMBUS-T460.dsl
