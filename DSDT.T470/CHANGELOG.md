@@ -110,7 +110,7 @@ Bumped WhateverGreen to 1.2.5 -- Use built in Backlight Injector --
        <dict>
           <key>Arguments</key>
 -         <string>kext-dev-mode=1</string>
-+         <string>kext-dev-mode=1 igfxcflbklt=1</string>
++         <string>kext-dev-mode=1 applbkl=0</string>
           <key>DefaultVolume</key>
           <string>osX</string>
           <key>IgnoreNVRAMBoot</key>
