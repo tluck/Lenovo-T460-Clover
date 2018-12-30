@@ -90,3 +90,39 @@
 
 
 * Updated to Mojave 10.14.1 with no issues. (2018-11-10)
+* Updated to Mojave 10.14.2 with no issues. (2018-12-01)
+
+Bumped WhateverGreen to 1.2.5 -- Use built in Backlight Injector --
+
+       remove AppleBacklightInjector.kext from /Library/Extensions
+
+       build SSDT-PNLF.dsl and add to ACPI/patched (remove SSDT-PNLF-T460)
+
+       Modify config.plist per:
+
+ 
+        Scotts-MacBook-Pro:DSDT.T470 sjk$ diff -wu config.plist /Volumes/ESP/EFI/CLOVER/config.plist
+
+--- config.plist    2018-12-20 11:41:21.000000000 -0500
++++ /Volumes/ESP/EFI/CLOVER/config.plist    2018-12-27 10:12:54.000000000 -0500
+@@ -176,7 +176,7 @@
+       <key>Boot</key>
+       <dict>
+          <key>Arguments</key>
+-         <string>kext-dev-mode=1</string>
++         <string>kext-dev-mode=1 igfxcflbklt=1</string>
+          <key>DefaultVolume</key>
+          <string>osX</string>
+          <key>IgnoreNVRAMBoot</key>
+@@ -243,6 +243,8 @@
+                <data>
+                   AAAAgA==
+                </data>
++           <key>enable-cfl-backlight-fix</key>
++           <true/>
+             </dict>
+          </dict>
+          <key>USB</key>
+	
+
+	
