@@ -92,25 +92,26 @@
 * Updated to Mojave 10.14.1 with no issues. (2018-11-10)
 * Updated to Mojave 10.14.2 with no issues. (2018-12-01)
 
-Bumped WhateverGreen to 1.2.5 -- Use built in Backlight Injector --
+
+Begin Simplification/Consolidation of KEXT's / Config
+
+Bumped WhateverGreen to 1.2.6 -- Use built in Backlight Injector --
 
        remove AppleBacklightInjector.kext from /Library/Extensions
 
-       build SSDT-PNLF.dsl and add to ACPI/patched (remove SSDT-PNLF-T460)
+       build SSDT-PNLF.dsl (from rehabman repo) and add to ACPI/patched (remove SSDT-PNLF-T460)
 
        Modify config.plist per:
 
- 
-        Scotts-MacBook-Pro:DSDT.T470 sjk$ diff -wu config.plist /Volumes/ESP/EFI/CLOVER/config.plist
 
+sjk$ diff -wu config.plist /Volumes/ESP/EFI/CLOVER/config.plist
 --- config.plist    2018-12-20 11:41:21.000000000 -0500
-+++ /Volumes/ESP/EFI/CLOVER/config.plist    2018-12-27 10:12:54.000000000 -0500
 @@ -176,7 +176,7 @@
        <key>Boot</key>
        <dict>
           <key>Arguments</key>
 -         <string>kext-dev-mode=1</string>
-+         <string>kext-dev-mode=1 applbkl=0</string>
++         <string>kext-dev-mode=1 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
           <key>DefaultVolume</key>
           <string>osX</string>
           <key>IgnoreNVRAMBoot</key>
@@ -118,11 +119,35 @@ Bumped WhateverGreen to 1.2.5 -- Use built in Backlight Injector --
                 <data>
                    AAAAgA==
                 </data>
-+           <key>enable-cfl-backlight-fix</key>
-+           <true/>
++	       <key>enable-cfl-backlight-fix</key>
++	       <true/>
              </dict>
           </dict>
           <key>USB</key>
-	
 
-	
+
+
+NOTE the bpr_ boot flags that makes the bluetooh drivers correctly functions after
+waking from sleep.
+
+Consolidate and Updated kext's in /Library/Extensions:
+
+All kext are from the kext's author, and not taken from TLUCK's repository.
+
+Version				Extension		Plugins
+1.3.1				Lilu
+1.2.6				WhateverGreen
+1.3.4				AppleALC
+1.90.1				AppleSmartBatteryManager
+1.9.2				VoodoPS2Controller
+2.2.10				BcrmFirmwareRepo
+2.2.10				BrcmPatchRAM2
+6.26-357-gceb835ea.1800					FakeSMC	APCISensors
+6.26-357-gceb835ea.1800			 		CPUSensors
+6.26-357-gceb835ea.1800					GPUSensors
+6.26-357-gceb835ea.1800					LPCSensors
+6.26-357-gceb835ea.1800					SMMSensors
+1.3.13				FakePCIID
+1.3.13				FakePCIID_Broadcom_WiFI
+0.6.5				USBInjectAll
+2.4.1d1				IntelMausEthernet

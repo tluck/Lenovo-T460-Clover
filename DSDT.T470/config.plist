@@ -21,7 +21,7 @@
                <key>FixRegions</key>
                <false/>
                <key>FixShutdown</key>
-               <false/>
+               <true/>
             </dict>
             <key>Patches</key>
             <array>
@@ -176,7 +176,7 @@
       <key>Boot</key>
       <dict>
          <key>Arguments</key>
-         <string>kext-dev-mode=1 applbkl=0</string>
+         <string>kext-dev-mode=1 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
          <key>DefaultVolume</key>
          <string>osX</string>
          <key>IgnoreNVRAMBoot</key>
