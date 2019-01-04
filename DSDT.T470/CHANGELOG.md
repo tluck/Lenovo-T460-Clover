@@ -127,8 +127,11 @@ sjk$ diff -wu config.plist /Volumes/ESP/EFI/CLOVER/config.plist
 
 
 
-NOTE the bpr_ boot flags that makes the bluetooh drivers correctly functions after
-waking from sleep.
+NOTE: the bpr_ boot flags that makes the bluetooh drivers correctly
+functions after waking from sleep.
+
+NOTE: in order to move to VoodooController 1.9.x, needed to comment out the
+unload/load of the kext from the /etc/rc.sleep and /etc/rc.wake.
 
 Consolidate and Updated kext's in /Library/Extensions:
 
