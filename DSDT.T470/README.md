@@ -80,20 +80,26 @@ All the differences are included in the DSDT470 directory.
       SSDT-BATC-T470.dsl        -- (T470 custom) Aggregate BAT0 and BAT1 into BATC for display
       SSDT-XHC-T470.dsl         -- (T470 custom) Custom list of USB2/USB3 ports
 
-I have included is my config.plist and the added kexts in my
-/Library/Extensions are:
+4. kernel extensions:
 
-drwxr-xr-x@ 3 root  wheel  102 Aug  9 17:08 AppleALC.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug  9 17:08 VoodooPS2Controller.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 13 06:54 Lilu.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 13 07:06 WhateverGreen.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 ACPIBatteryManager.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 FakeSMC.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 IntelMausiEthernet.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 USBInjectAll.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 14 20:23 X86PlatformPluginInjector.kext
-drwxr-xr-x  3 root  wheel  102 Aug 16 14:32 AppleBacklightInjector.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 29 15:51 FakePCIID_Broadcom_WiFi.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 29 15:51 FakePCIID.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 29 15:51 BrcmPatchRAM2.kext
-drwxr-xr-x@ 3 root  wheel  102 Aug 29 15:51 BrcmFirmwareRepo.kext
+  Consolidate and Updated kext's in /Library/Extensions:
+
+  All kext are from the kext's author, and not taken from TLUCK's repository.
+
+    Version				Extension		Plugins
+    1.3.1				Lilu
+    1.2.6				WhateverGreen
+    1.3.4				AppleALC
+    1.90.1				AppleSmartBatteryManager
+    1.9.2				VoodoPS2Controller
+    2.2.10				BcrmFirmwareRepo
+    2.2.10				BrcmPatchRAM2
+    6.26-357-gceb835ea.1800					FakeSMC	APCISensors
+    6.26-357-gceb835ea.1800			 		CPUSensors
+    6.26-357-gceb835ea.1800					GPUSensors
+    6.26-357-gceb835ea.1800					LPCSensors
+    6.26-357-gceb835ea.1800					SMMSensors
+    1.3.13				FakePCIID
+    1.3.13				FakePCIID_Broadcom_WiFI
+    0.6.5				USBInjectAll
+    2.4.1d1				IntelMausEthernet
