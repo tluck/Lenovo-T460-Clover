@@ -8,19 +8,19 @@
          <dict>
             <key>Fixes</key>
             <dict>
-               <key>FIX_RTC_20000</key>
+               <key>Comment-IRQ Fix</key>
+               <string>The following fixes may be needed for onboard audio/USB/etc</string>
+               <key>FixRTC</key>
                <true/>
-               <key>FIX_TMR_40000</key>
+               <key>FixTMR</key>
                <true/>
-               <key>FixHPET_0010</key>
+               <key>FixHPET</key>
                <true/>
-               <key>FixIPIC_0040</key>
+               <key>FixIPIC</key>
                <true/>
-               <key>FixRegions_10000000</key>
+               <key>FixRegions</key>
                <false/>
-               <key>FixShutdown_0004</key>
-               <false/>
-               <key>NewWay_80000000</key>
+               <key>FixShutdown</key>
                <true/>
             </dict>
             <key>Patches</key>
@@ -176,7 +176,7 @@
       <key>Boot</key>
       <dict>
          <key>Arguments</key>
-         <string>kext-dev-mode=1</string>
+         <string>kext-dev-mode=1 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
          <key>DefaultVolume</key>
          <string>osX</string>
          <key>IgnoreNVRAMBoot</key>
@@ -243,6 +243,8 @@
                <data>
                   AAAAgA==
                </data>
+	       <key>enable-cfl-backlight-fix</key>
+	       <true/>
             </dict>
          </dict>
          <key>USB</key>
