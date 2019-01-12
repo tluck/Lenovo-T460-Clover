@@ -71,11 +71,11 @@ All the differences are included in the DSDT470 directory.
 
    My add on SSDT patches are:
 
-      SSDT-XCPM.dsl             -- (REHABMAN) CPU power management
       SSDT-LPC.dsl              -- (REHABMAN) LPC device initialization, CPU power states
       SSDT-PNLF.dsl             -- (REHABMAN) Backlight control
       SSDT-XOSI.dsl             -- (REHABMAN) Simulate Windows 2009 for XHCI USB
       SSDT-HDEF-T460.dsl        -- (TLUCK) Audio controller parameters
+      SSDT-XCPM-T470.dsl        -- (REHABMAN) CPU power management, changed CPU0 to PR00 
       SSDT-HACK-T470.dsl        -- (T470 custom) Shutdown/Sleep -- blink LED (sleep)
       SSDT-BATC-T470.dsl        -- (T470 custom) Aggregate BAT0 and BAT1 into BATC for display
       SSDT-XHC-T470.dsl         -- (T470 custom) Custom list of USB2/USB3 ports

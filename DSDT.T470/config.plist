@@ -312,7 +312,7 @@
       <dict>
          <key>AppleRTC</key>
          <true/>
-         <key>AsusAICPUPM</key>
+         <key>AppleIntelCPUPM</key>
          <false/>
          <key>KernelLapic</key>
          <false/>

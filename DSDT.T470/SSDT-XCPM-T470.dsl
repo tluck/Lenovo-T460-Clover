@@ -17,7 +17,8 @@
 DefinitionBlock("", "SSDT", 2, "hack", "_XCPM", 0)
 {
 #endif
-    Method(_PR.CPU0._DSM, 4)
+//    Method(_PR.CPU0._DSM, 4)
+    Method(_PR.PR00._DSM, 4)
     {
         If (!Arg2) { Return (Buffer() { 0x03 } ) }
         Return (Package()
