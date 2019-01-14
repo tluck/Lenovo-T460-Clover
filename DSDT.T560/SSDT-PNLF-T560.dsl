@@ -8,7 +8,7 @@ DefinitionBlock ("", "SSDT", 2, "T560", "PNLF", 0)
         Name(_ADR, Zero)
         Name(_HID, EisaId ("APP0002"))
         Name(_CID, "backlight")
-        Name(_UID, 10)
+        Name(_UID, 11)
         Name(_STA, 0x0B)
     }
 }
