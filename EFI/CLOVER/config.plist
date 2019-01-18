@@ -240,10 +240,39 @@
 			<key>Inject</key>
 			<integer>28</integer>
 		</dict>
-		<key>FakeID</key>
+		<key>Properties</key>
 		<dict>
-			<key>IntelGFX</key>
-			<string>0x0000</string>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>
+				AAAWGQ==
+				</data>
+				<key>device-id</key>
+				<data>
+				FhkAAA==
+				</data>
+				<key>enable-hdmi20</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-fbmem</key>
+				<data>
+				AACQAA==
+				</data>
+				<key>framebuffer-patch-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-stolenmem</key>
+				<data>
+				AAAwAQ==
+				</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>
+				AAAAgA==
+				</data>
+			</dict>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -333,7 +362,7 @@
 				<key>Comment</key>
 				<string>Skylake minStolenSize patch less or equal fStolenMemorySize assertion, 10.11.4 - based on Austere.J patch</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				QTnEdio=
@@ -351,7 +380,7 @@
 				<key>Comment</key>
 				<string>Skylake minStolenSize patch (credit RehabMan based on original by Austere.J) for Sierra</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				iUXIOcZ2UQ==
@@ -368,6 +397,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.13 (credit PMHeart, , shdkpr2008)</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>
 				TIlduHZA
@@ -384,6 +415,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.14 (credit Austere.J)</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>
 				dkBI/wVh6Qc=
@@ -401,7 +434,7 @@
 				<key>Comment</key>
 				<string>Framebuffer - eDP</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AAAIAAIAAACYAAAA
@@ -417,7 +450,7 @@
 				<key>Comment</key>
 				<string>Framebuffer - brightness</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				bAUAAGwFAAA=
@@ -433,7 +466,7 @@
 				<key>Comment</key>
 				<string>HDMI-audio, port 0105, 0x19160000 - T460 DP on left side</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AQUJAAAEAACHAQAA
@@ -449,7 +482,7 @@
 				<key>Comment</key>
 				<string>HDMI-audio, port 0204, 0x19160000 - T460 HDMI on right side</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AgQKAAAEAACHAQAA
