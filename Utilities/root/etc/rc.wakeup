@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# reload TrackPad
-kextload  /Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext &
-
 # turn off eth and wifi
 
 #ethd=$( networksetup -listallhardwareports | awk '$3=="Ethernet" {getline; print $2}')
