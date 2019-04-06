@@ -85,16 +85,16 @@
                   <key>Replace</key>
                   <data>WlBUUwE=</data>
                </dict>
-	       <dict>
-		  <key>Comment</key>
-		  <string>change XHC1 to XHC</string>
+               <dict>
+                  <key>Comment</key>
+                  <string>change XHC1 to XHC</string>
                   <key>Disabled</key>
                   <true/>
-		  <key>Find</key>
-		  <data>WEhDMQ==</data>
-		  <key>Replace</key>
-		  <data>WEhDXw==</data>
-	       </dict>
+                  <key>Find</key>
+                  <data>WEhDMQ==</data>
+                  <key>Replace</key>
+                  <data>WEhDXw==</data>
+               </dict>
                <dict>
                   <key>Comment</key>
                   <string>change _WAK to ZWAK (T460)</string>
@@ -176,7 +176,7 @@
       <key>Boot</key>
       <dict>
          <key>Arguments</key>
-         <string>kext-dev-mode=1 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
+         <string>kext-dev-mode=1 bpr_upgradedelay=200 bpr_postresetdelay=400</string>
          <key>DefaultVolume</key>
          <string>osX</string>
          <key>IgnoreNVRAMBoot</key>
@@ -204,7 +204,7 @@
          <key>Audio</key>
          <dict>
             <key>Inject</key>
-            <integer>3</integer>
+            <integer>29</integer>
          </dict>
          <key>FakeID</key>
          <dict>
@@ -243,8 +243,8 @@
                <data>
                   AAAAgA==
                </data>
-	       <key>enable-cfl-backlight-fix</key>
-	       <true/>
+               <key>enable-cfl-backlight-fix</key>
+               <true/>
             </dict>
          </dict>
          <key>USB</key>
@@ -399,34 +399,34 @@
                <key>Replace</key>
                <data>g32ID5CQkJCQkA==</data>
             </dict>
-	    <dict>
-	       <key>Comment</key>
-	       <string>disable port limit in XHCI kext (credit PMHeart)</string>
-	       <key>MatchOS</key>
-	       <string>10.14.0</string>
-	       <key>Name</key>
-	       <string>com.apple.driver.usb.AppleUSBXHCI</string>
+            <dict>
+               <key>Comment</key>
+               <string>disable port limit in XHCI kext (credit PMHeart)</string>
+               <key>MatchOS</key>
+               <string>10.14.0</string>
+               <key>Name</key>
+               <string>com.apple.driver.usb.AppleUSBXHCI</string>
                <key>Disabled</key>
                <true/>
-	       <key>Find</key>
-	       <data>g/sPD4MDBQAA</data>
-	       <key>Replace</key>
-	       <data>g/sPkJCQkJCQ</data>
-	    </dict>
-	    <dict>
-	       <key>Comment</key>
-	       <string>disable port limit in XHCI kext (credit DalianSky,Ricky)</string>
-	       <key>MatchOS</key>
-	       <string>10.14.1,10.14.2</string>
-	       <key>Name</key>
-	       <string>com.apple.driver.usb.AppleUSBXHCI</string>
+               <key>Find</key>
+               <data>g/sPD4MDBQAA</data>
+               <key>Replace</key>
+               <data>g/sPkJCQkJCQ</data>
+            </dict>
+            <dict>
+               <key>Comment</key>
+               <string>disable port limit in XHCI kext (credit DalianSky,Ricky)</string>
+               <key>MatchOS</key>
+               <string>10.14.1,10.14.2</string>
+               <key>Name</key>
+               <string>com.apple.driver.usb.AppleUSBXHCI</string>
                <key>Disabled</key>
                <true/>
-	       <key>Find</key>
-	       <data>g/sPD4OPBAAA</data>
-	       <key>Replace</key>
-	       <data>g/sPkJCQkJCQ</data>
-	    </dict>
+               <key>Find</key>
+               <data>g/sPD4OPBAAA</data>
+               <key>Replace</key>
+               <data>g/sPkJCQkJCQ</data>
+            </dict>
             <dict>
                <key>Comment</key>
                <string>Enable TRIM for non-Apple SSDs</string>

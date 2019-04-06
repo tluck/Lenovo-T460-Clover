@@ -93,7 +93,7 @@ All the differences are included in the DSDT470 directory.
     1.90.1				AppleSmartBatteryManager
     1.9.2				VoodoPS2Controller
     2.2.10				BcrmFirmwareRepo
-    2.2.10				BrcmPatchRAM2
+    2.2.10				BrcmPatchRAM2 (from my forked repo)
     6.26-357-gceb835ea.1800					FakeSMC	APCISensors
     6.26-357-gceb835ea.1800			 		CPUSensors
     6.26-357-gceb835ea.1800					GPUSensors

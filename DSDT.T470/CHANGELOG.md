@@ -79,3 +79,15 @@ on my T470 --
    NOTE: in order to move to VoodooController 1.9.x, needed to comment out the
    unload/load of the kext from the /etc/rc.sleep and /etc/rc.wake.
 
+* Updated to 10.14.4
+
+	minor tuning to SSDT-XHC-T470.dsl
+
+	went back to ALC audio 29
+	-            <integer>3</integer>
+	+            <integer>29</integer>
+
+	Using my forked BCRM from rehabman, with code comparision to TLUCK's repo
+	https://github.com/ESProcessing/OS-X-BrcmPatchRAM
+	-         <string>kext-dev-mode=1 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
+	+         <string>kext-dev-mode=1 bpr_upgradedelay=200 bpr_postresetdelay=400</string>
