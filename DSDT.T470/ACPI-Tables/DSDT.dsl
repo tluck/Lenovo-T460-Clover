@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Tue Sep 18 11:48:09 2018
+ * Disassembly of DSDT.aml, Sat Apr  6 13:12:51 2019
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00020F40 (134976)
+ *     Length           0x0002116B (135531)
  *     Revision         0x02
- *     Checksum         0xB2
+ *     Checksum         0x12
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "SKL     "
  *     OEM Revision     0x00000000 (0)
@@ -5497,6 +5497,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
                 OperationRegion (MC11, SystemMemory, \XWMB, 0x9000)
                 Field (MC11, DWordAcc, Lock, Preserve)
                 {
+                    Offset (0x81A0), 
+                    LFU3,   6, 
                     Offset (0x81C4), 
                         ,   2, 
                     UPSW,   2
@@ -5515,21 +5517,45 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
                 OperationRegion (UPSC, SystemMemory, Add (\XWMB, U3PS), 0x0100)
                 Field (UPSC, DWordAcc, Lock, Preserve)
                 {
+                        ,   5, 
+                    PLS1,   4, 
+                        ,   13, 
+                    PLC1,   1, 
                     Offset (0x03), 
                     CAS1,   1, 
                     Offset (0x10), 
+                        ,   5, 
+                    PLS2,   4, 
+                        ,   13, 
+                    PLC2,   1, 
                     Offset (0x13), 
                     CAS2,   1, 
                     Offset (0x20), 
+                        ,   5, 
+                    PLS3,   4, 
+                        ,   13, 
+                    PLC3,   1, 
                     Offset (0x23), 
                     CAS3,   1, 
                     Offset (0x30), 
+                        ,   5, 
+                    PLS4,   4, 
+                        ,   13, 
+                    PLC4,   1, 
                     Offset (0x33), 
                     CAS4,   1, 
                     Offset (0x40), 
+                        ,   5, 
+                    PLS5,   4, 
+                        ,   13, 
+                    PLC5,   1, 
                     Offset (0x43), 
                     CAS5,   1, 
                     Offset (0x50), 
+                        ,   5, 
+                    PLS6,   4, 
+                        ,   13, 
+                    PLC6,   1, 
                     Offset (0x53), 
                     CAS6,   1, 
                     Offset (0x60), 
@@ -5546,18 +5572,80 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
                     CASA,   1
                 }
 
+                Field (UPSC, DWordAcc, Lock, Preserve)
+                {
+                    PSC1,   32, 
+                    Offset (0x10), 
+                    PSC2,   32, 
+                    Offset (0x20), 
+                    PSC3,   32, 
+                    Offset (0x30), 
+                    PSC4,   32, 
+                    Offset (0x40), 
+                    PSC5,   32, 
+                    Offset (0x50), 
+                    PSC6,   32
+                }
+
                 Store (0x03, UPSW)
+                Store (0x01, STGE)
+                Store (0x3F, LFU3)
+                Name (PSCO, 0xFFFFFFFF)
+                Sleep (0x01)
+                If (LAnd (LEqual (PLS1, 0x03), PLC1))
+                {
+                    And (0xFFFFFFFD, PSC1, PSCO)
+                    Or (0x00400000, PSCO, PSCO)
+                    Store (PSCO, PSC1)
+                }
+
+                If (LAnd (LEqual (PLS2, 0x03), PLC2))
+                {
+                    And (0xFFFFFFFD, PSC2, PSCO)
+                    Or (0x00400000, PSCO, PSCO)
+                    Store (PSCO, PSC2)
+                }
+
+                If (LAnd (LEqual (PLS3, 0x03), PLC3))
+                {
+                    And (0xFFFFFFFD, PSC3, PSCO)
+                    Or (0x00400000, PSCO, PSCO)
+                    Store (PSCO, PSC3)
+                }
+
+                If (LAnd (LEqual (PLS4, 0x03), PLC4))
+                {
+                    And (0xFFFFFFFD, PSC4, PSCO)
+                    Or (0x00400000, PSCO, PSCO)
+                    Store (PSCO, PSC4)
+                }
+
+                If (LAnd (LEqual (PLS5, 0x03), PLC5))
+                {
+                    And (0xFFFFFFFD, PSC5, PSCO)
+                    Or (0x00400000, PSCO, PSCO)
+                    Store (PSCO, PSC5)
+                }
+
+                If (LAnd (LEqual (PLS6, 0x03), PLC6))
+                {
+                    And (0xFFFFFFFD, PSC6, PSCO)
+                    Or (0x00400000, PSCO, PSCO)
+                    Store (PSCO, PSC6)
+                }
+
                 Store (0x01, STGE)
                 If (LOr (LOr (LOr (LOr (LOr (LOr (CAS1, CAS2), CAS3), CAS4), CAS5), CAS6), LAnd (LEqual (PCHV (), SPTH), LOr (LOr (LOr (CAS7, CAS8), CAS9), CASA))))
                 {
                     Store (0x00, D3HE)
-                    Sleep (0x0A)
+                    Sleep (0x01)
                 }
                 Else
                 {
                     Store (0x01, D3HE)
                 }
 
+                Store (0x00, LFU3)
                 And (^PDBM, Not (0x02), ^PDBM)
                 Store (0x03, ^D0D3)
                 Store (Local2, ^MEMB)
@@ -12653,6 +12741,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
                 Name (NRPN, 0x00)
                 Name (MXIE, 0x00)
                 Name (ISD3, 0x00)
+                Method (RPPC, 1, Serialized)
+                {
+                    If (LEqual (Arg0, 0x00))
+                    {
+                        RPOF ()
+                    }
+                    Else
+                    {
+                        RPON ()
+                    }
+                }
+
                 Method (RPON, 0, Serialized)
                 {
                     If (LEqual (ISD3, 0x00))
@@ -12936,6 +13036,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
                 Name (NRPN, 0x00)
                 Name (MXIE, 0x00)
                 Name (ISD3, 0x00)
+                Method (RPPC, 1, Serialized)
+                {
+                    If (LEqual (Arg0, 0x00))
+                    {
+                        RPOF ()
+                    }
+                    Else
+                    {
+                        RPON ()
+                    }
+                }
+
                 Method (RPON, 0, Serialized)
                 {
                     If (LEqual (ISD3, 0x00))
@@ -13219,6 +13331,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
                 Name (NRPN, 0x00)
                 Name (MXIE, 0x00)
                 Name (ISD3, 0x00)
+                Method (RPPC, 1, Serialized)
+                {
+                    If (LEqual (Arg0, 0x00))
+                    {
+                        RPOF ()
+                    }
+                    Else
+                    {
+                        RPON ()
+                    }
+                }
+
                 Method (RPON, 0, Serialized)
                 {
                     If (LEqual (ISD3, 0x00))
@@ -20733,7 +20857,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
         }
     }
 
-    Name (TDMA, 0x7FED5000)
+    Name (TDMA, 0x7FEDF000)
     Name (TDPG, 0x80000000)
     Name (TDTI, 0x80000000)
     Scope (\_GPE)
@@ -28140,7 +28264,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)
 
         Method (_Q7F, 0, NotSerialized)  // _Qxx: EC Query
         {
-            Fatal (0x01, 0x80010000, 0x00011153)
+            Fatal (0x01, 0x80010000, 0x000111DF)
         }
 
         Method (_Q46, 0, NotSerialized)  // _Qxx: EC Query

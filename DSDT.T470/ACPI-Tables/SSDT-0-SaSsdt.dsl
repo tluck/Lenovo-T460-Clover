@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-0-SaSsdt.aml, Tue Sep 18 11:48:08 2018
+ * Disassembly of SSDT-0-SaSsdt.aml, Sat Apr  6 13:12:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00003246 (12870)
+ *     Length           0x000030B0 (12464)
  *     Revision         0x02
- *     Checksum         0x3C
+ *     Checksum         0xEF
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "SaSsdt "
  *     OEM Revision     0x00003000 (12288)
@@ -58,7 +58,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
     External (PNHM, IntObj)    // (from opcode)
     External (S0ID, UnknownObj)    // (from opcode)
 
-    OperationRegion (SANV, SystemMemory, 0x7FF67418, 0x01FE)
+    OperationRegion (SANV, SystemMemory, 0x7FF67418, 0x01F7)
     Field (SANV, AnyAcc, Lock, Preserve)
     {
         ASLB,   32, 
@@ -174,9 +174,11 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
         CKM0,   32, 
         CKM1,   32, 
         CKM2,   32, 
+        DLAO,   16, 
+        DLAL,   16, 
+        GSCE,   8, 
         Offset (0x1F4), 
-        Offset (0x1F7), 
-        Offset (0x1FE)
+        Offset (0x1F7)
     }
 
     Scope (\_SB.PCI0.GFX0)
@@ -2644,7 +2646,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("iGfx Supported Functions Bitmap ", Debug)
                             Return (0x0001E7FF)
                         }
                     }
@@ -2652,7 +2653,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store (" Adapter Power State Notification ", Debug)
                             If (LAnd (LEqual (S0ID, One), LLess (OSYS, 0x07DF)))
                             {
                                 If (LEqual (And (DerefOf (Index (Arg3, Zero)), 0xFF), One))
@@ -2684,7 +2684,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("Display Power State Notification ", Debug)
                             Return (One)
                         }
                     }
@@ -2692,7 +2691,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("BIOS POST Completion Notification ", Debug)
                             Return (One)
                         }
                     }
@@ -2700,7 +2698,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("Pre-Hires Set Mode ", Debug)
                             Return (One)
                         }
                     }
@@ -2708,7 +2705,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("Post-Hires Set Mode ", Debug)
                             Return (One)
                         }
                     }
@@ -2716,7 +2712,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("SetDisplayDeviceNotification", Debug)
                             Return (One)
                         }
                     }
@@ -2724,7 +2719,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("SetBootDevicePreference ", Debug)
                             And (DerefOf (Index (Arg3, Zero)), 0xFF, IBTT)
                             Return (One)
                         }
@@ -2733,7 +2727,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("SetPanelPreference ", Debug)
                             And (DerefOf (Index (Arg3, Zero)), 0xFF, IPSC)
                             If (And (DerefOf (Index (Arg3, One)), 0xFF))
                             {
@@ -2749,7 +2742,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("FullScreenDOS ", Debug)
                             Return (One)
                         }
                     }
@@ -2757,7 +2749,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("APM Complete ", Debug)
                             Store (ShiftLeft (LIDS, 0x08), Local0)
                             Add (Local0, 0x0100, Local0)
                             Return (Local0)
@@ -2767,7 +2758,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("GetBootDisplayPreference ", Debug)
                             Or (ShiftLeft (DerefOf (Index (Arg3, 0x03)), 0x18), ShiftLeft (DerefOf (Index (Arg3, 0x02)), 0x10), Local0)
                             And (Local0, 0xEFFF0000, Local0)
                             And (Local0, ShiftLeft (DerefOf (Index (DBTB, IBTT)), 0x10), Local0)
@@ -2779,7 +2769,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("GetPanelDetails ", Debug)
                             Store (IPSC, Local0)
                             Or (Local0, ShiftLeft (IPAT, 0x08), Local0)
                             Add (Local0, 0x0100, Local0)
@@ -2793,7 +2782,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("GetInternalGraphics ", Debug)
                             Store (GIVD, Local0)
                             XOr (Local0, One, Local0)
                             Or (Local0, ShiftLeft (GMFN, One), Local0)
@@ -2807,7 +2795,6 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "SaSsdt ", 0x00003000)
                     {
                         If (LEqual (Arg1, One))
                         {
-                            Store ("GetAKSV ", Debug)
                             Name (KSVP, Package (0x02)
                             {
                                 0x80000000, 

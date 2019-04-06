@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-2-Rmv_Batt.aml, Tue Sep 18 11:48:08 2018
+ * Disassembly of SSDT-2-Rmv_Batt.aml, Sat Apr  6 13:12:50 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"

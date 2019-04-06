@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-8-TbtTypeC.aml, Tue Sep 18 11:48:09 2018
+ * Disassembly of SSDT-8-TbtTypeC.aml, Sat Apr  6 13:12:51 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"

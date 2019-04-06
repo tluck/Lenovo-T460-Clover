@@ -70,21 +70,21 @@ DefinitionBlock ("", "SSDT", 2, "T470", "XHC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 2, 0, 0, 0 },
                     },
-//                    "HS03", Package()   // Nothing
-//                    {
-//                        "UsbConnector", 255,
-//                        "port", Buffer() { 3, 0, 0, 0 },
-//                    },
+                    "HS03", Package()   // Nothing
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 3, 0, 0, 0 },
+                    },
                     "HS04", Package()   // USB2_3 right side front external
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 4, 0, 0, 0 },
                     },
-//                    "HS05", Package()   // USB2 Sierra WWAN internal
-//                    {
-//                        "UsbConnector", 255,
-//                        "port", Buffer() { 5, 0, 0, 0 },
-//                    },
+                    "HS05", Package()   // USB2 Sierra WWAN internal
+                    {
+                        "UsbConnector", 255,
+                        "port", Buffer() { 5, 0, 0, 0 },
+                    },
 //                    "HS06", Package()   // Nothing
 //                    {
 //                        "UsbConnector", 255,
@@ -165,11 +165,11 @@ DefinitionBlock ("", "SSDT", 2, "T470", "XHC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 17, 0, 0, 0 },
                     },
-                    "SS06", Package()    // Nothing
-                    {
-                        "UsbConnector", 3,
-                        "port", Buffer() { 22, 0, 0, 0 },
-                    },
+//                    "SS06", Package()    // Nothing
+//                    {
+//                        "UsbConnector", 3,
+//                        "port", Buffer() { 22, 0, 0, 0 },
+//                    },
 //                    "SS07", Package()    // Nothing
 //                    {
 //                        "UsbConnector", 3,
