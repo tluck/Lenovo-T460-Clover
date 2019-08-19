@@ -94,12 +94,18 @@ All the differences are included in the DSDT470 directory.
     1.9.2				VoodoPS2Controller
     2.2.10				BcrmFirmwareRepo
     2.2.10				BrcmPatchRAM2 (from my forked repo)
-    6.26-357-gceb835ea.1800					FakeSMC	APCISensors
-    6.26-357-gceb835ea.1800			 		CPUSensors
-    6.26-357-gceb835ea.1800					GPUSensors
-    6.26-357-gceb835ea.1800					LPCSensors
-    6.26-357-gceb835ea.1800					SMMSensors
+    6.26-357-gceb835ea.1800		FakeSMC	APCISensors
+    6.26-357-gceb835ea.1800			CPUSensors
+    6.26-357-gceb835ea.1800			GPUSensors
+    6.26-357-gceb835ea.1800			LPCSensors
+    6.26-357-gceb835ea.1800			SMMSensors
     1.3.13				FakePCIID
     1.3.13				FakePCIID_Broadcom_WiFI
     0.6.5				USBInjectAll
     2.4.1d1				IntelMausEthernet
+
+
+08/18/2019 --
+   Bumped Lilu, WEG and AppleALC to latest, modified cong.plist for
+   hdmi-audio, minor SSDT mods. OS at 10.14.6. See CHANGELOG.md
+   

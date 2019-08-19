@@ -12,7 +12,8 @@ DefinitionBlock ("", "SSDT", 2, "T460", "HDEF", 0)
         Return(Package()
         {
         "AAPL,slot-name",    Buffer() { "Built in" },
-        "layout-id",         Buffer() { 0x1C, 0x00, 0x00, 0x00 },
+	//        "layout-id",         Buffer() { 0x1C, 0x00, 0x00, 0x00 },
+	"layout-id",         Buffer() { 0x1D, 0x00, 0x00, 0x00 },
         "codec-id",          Buffer() { 0x93, 0x02, 0xEC, 0x10 },
         "model",             Buffer() { "Realtek ALC293 HD Audio" },
         "name",              Buffer() { "Realtek ALC293" },
