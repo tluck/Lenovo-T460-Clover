@@ -91,3 +91,27 @@ on my T470 --
 	https://github.com/ESProcessing/OS-X-BrcmPatchRAM
 	-         <string>kext-dev-mode=1 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
 	+         <string>kext-dev-mode=1 bpr_upgradedelay=200 bpr_postresetdelay=400</string>
+
+* Updated to 10.14.6
+
+	minor tuning to SSDT-PNLF.dsl
+   	   renamed IGPU tp GFX0, so rename in config.plist is no longer
+	   required
+
+	config.plist -- added to WEG properties to enable HDMI
+	audio olug and play
+
+        +                    <key>framebuffer-pipecount</key>
+	+                    <data>AwAAAA==</data>
+	+                    <key>framebuffer-portcount</key>
+	+                    <data>AwAAAA==</data>
+	+                    <key>framebuffer-con1-enable</key>
+	+                    <data>AQAAAA==</data>
+	+                    <key>framebuffer-con1-type</key>
+	+                    <data>AAgAAA==</data>
+	+                    <key>framebuffer-con2-enable</key>
+	+                    <data>AQAAAA==</data>
+	+                    <key>framebuffer-con2-type</key>
+	+                    <data>AAgAAA==</data>
+
+	config.plist -- removed rename of DDST GFX0, use GFX0 in SSDT-PNLF

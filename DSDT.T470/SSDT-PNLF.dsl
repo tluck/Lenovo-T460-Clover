@@ -21,14 +21,14 @@ DefinitionBlock("", "SSDT", 2, "hack", "_PNLF", 0)
     External(RMCF.GRAN, IntObj)
     External(RMCF.FBTP, IntObj)
 
-    External(_SB.PCI0.IGPU, DeviceObj)
-    Scope(_SB.PCI0.IGPU)
+    External(_SB.PCI0.GFX0, DeviceObj)
+    Scope(_SB.PCI0.GFX0)
     {
         OperationRegion(RMP3, PCI_Config, 0, 0x14)
     }
 
     // For backlight control
-    Device(_SB.PCI0.IGPU.PNLF)
+    Device(_SB.PCI0.GFX0.PNLF)
     {
         Name(_ADR, Zero)
         Name(_HID, EisaId("APP0002"))
@@ -50,7 +50,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "_PNLF", 0)
             Offset(0x10), BAR1,32,
         }
 
-        // IGPU PWM backlight register descriptions:
+        // GFX0 PWM backlight register descriptions:
         //   LEV2 not currently used
         //   LEVL level of backlight in Sandy/Ivy
         //   P0BL counter, when zero is vertical blank
@@ -125,7 +125,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "_PNLF", 0)
             // Now fixup the backlight PWM depending on the framebuffer type
             // At this point:
             //   Local4 is RMCF.BLKT value, if specified (default is 1)
-            //   Local0 is device-id for IGPU
+            //   Local0 is device-id for GFX0
             //   Local2 is LMAX, if specified (Ones means based on device-id)
             //   Local3 is framebuffer type
 
