@@ -26,4 +26,7 @@ status=$(cat /var/tmp/wifi.status.txt)
 rm /var/tmp/wifi.status.txt
 fi
 
+#fix no camera after sleep
+sudo killall VDCAssistant
+
 exit 
