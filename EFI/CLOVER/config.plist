@@ -238,7 +238,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<integer>28</integer>
+			<integer>29</integer>
 		</dict>
 		<key>Properties</key>
 		<dict>
@@ -252,9 +252,27 @@
 				<data>
 				FhkAAA==
 				</data>
+				<key>enable-cfl-backlight-fix</key>
+				<integer>1</integer>
 				<key>enable-hdmi20</key>
 				<data>
 				AQAAAA==
+				</data>
+				<key>framebuffer-con1-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con1-type</key>
+				<data>
+				AAgAAA==
+				</data>
+				<key>framebuffer-con2-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con2-type</key>
+				<data>
+				AAgAAA==
 				</data>
 				<key>framebuffer-fbmem</key>
 				<data>
@@ -263,6 +281,14 @@
 				<key>framebuffer-patch-enable</key>
 				<data>
 				AQAAAA==
+				</data>
+				<key>framebuffer-pipecount</key>
+				<data>
+				AwAAAA==
+				</data>
+				<key>framebuffer-portcount</key>
+				<data>
+				AwAAAA==
 				</data>
 				<key>framebuffer-stolenmem</key>
 				<data>
