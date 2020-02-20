@@ -21,6 +21,7 @@ do
     then
         printf "%s\n" "Installing ${t} in ${tool_dir}/"
         sudo cp -a "$f" ${tool_dir}/
+        sudo chmod +x "${tool_dir}/${t}"
     fi
 done
 
