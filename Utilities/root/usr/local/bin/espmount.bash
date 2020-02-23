@@ -36,7 +36,7 @@ fi
 # find esp of boot volume
 bvs=$( system_profiler SPSoftwareDataType | grep Volume )
 bv=${bvs#*: }
-lds=$( diskutil info $bv  |  grep "Part of"          | sed -e's/^.* disk/disk/' )
+lds=$( diskutil info "$bv"  |  grep "Part of"          | sed -e's/^.* disk/disk/' )
 pds1=$( diskutil list $lds | egrep " Volume on| Store " | sed -e's/^.* disk/disk/' )
 #pds2=$( diskutil list      | egrep " Container $lds" | sed -e's/^.* disk/disk/' )
 pds=${pds1}${pds2}
