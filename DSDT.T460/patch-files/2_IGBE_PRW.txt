@@ -1,7 +1,0 @@
-# Fix IGPE PRW for sleep
-into device label IGBE code_regex Name\s+\(_PRW,[\s\S]*\}\) remove_matched;
-into device label IGBE insert
-begin
-Name (_PRW, Package() { 0x6D, 0x00 })
-end;
-

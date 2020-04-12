@@ -1,6 +1,0 @@
-# turn on H8DR - use alternate logic for newer OS
-into method label _INI parent_label \_SB insert
-begin
-     Store (0x01, \H8DR)\n
-end;
-// EOF

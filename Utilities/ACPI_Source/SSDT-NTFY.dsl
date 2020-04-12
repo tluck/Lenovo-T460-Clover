@@ -1,5 +1,6 @@
 // SSDT for Notify BAT0 and BAT1 to BATC
 // ACPI binary patches required to function
+//
 // Change _Q22 to XQ22:
 // Find:    X1EyMg==	Replace: WFEyMg==
 //
@@ -15,6 +16,9 @@
 // Change _Q4B to XQ4B:
 // Find:    X1E0Qg==	Replace: WFE0Qg==
 //
+// Change _Q4C to XQ4C:
+// Find:    X1E0Qw==	Replace: WFE0Qw==
+//
 // Change _Q4D to XQ4D:
 // Find:    X1E0RA==	Replace: WFE0RA==
 //
@@ -25,23 +29,26 @@ DefinitionBlock ("", "SSDT", 2, "T460", "NTFY", 0)
 {
 	// Common definitions
     External (\_SB.PCI0.LPC.EC, DeviceObj)
+    External (\_SB.PCI0.LPC.EC.BAT1, DeviceObj)
     External (\_SB.PCI0.LPC.EC.BATC, DeviceObj)
     External (\_SB.PCI0.LPC.EC.HB0A, FieldUnitObj)
     External (\_SB.PCI0.LPC.EC.HB1A, FieldUnitObj)
-    External (\_SB.PCI0.LPC.EC.CLPM, MethodObj)
+    External (\_SB.PCI0.LPC.EC.CLPM, MethodObj)     // 0 Argugements
+    External (\_SB.PCI0.LPC.EC.HKEY.MHKQ, MethodObj)    // 1 Arguments
 
     // BAT1 definitions
     External (\BT2T, FieldUnitObj)
-    External (\_SB.PCI0.LPC.EC.BAT1.SBLI, IntObj)
     External (\_SB.PCI0.LPC.EC.SLUL, FieldUnitObj)
-    External (\_SB.PCI0.LPC.EC.BAT1.XB1S, IntObj)
     External (\_SB.PCI0.LPC.EC.BAT1.B1ST, IntObj)
+    External (\_SB.PCI0.LPC.EC.BAT1.SBLI, IntObj)
+    External (\_SB.PCI0.LPC.EC.BAT1.XB1S, IntObj)
     External (\_SB.PCI0.LPC.EC.BAT0.B0ST, IntObj)
 
     // Notify BAT0 and BAT1 to BATC
     External (\_SB.PCI0.LPC.EC.XQ22, MethodObj)
     External (\_SB.PCI0.LPC.EC.XQ4A, MethodObj)
     External (\_SB.PCI0.LPC.EC.XQ4B, MethodObj)
+    External (\_SB.PCI0.LPC.EC.BAT1.XQ4C, MethodObj)
     External (\_SB.PCI0.LPC.EC.XQ24, MethodObj)
 
     External (\_SB.PCI0.LPC.EC.XQ4D, MethodObj)
@@ -186,6 +193,34 @@ DefinitionBlock ("", "SSDT", 2, "T460", "NTFY", 0)
             Else
             {
                 \_SB.PCI0.LPC.EC.WBAT (Arg0)
+            }
+        }
+    }
+
+    Scope (\_SB.PCI0.LPC.EC.BAT1)
+    {
+        Method (_Q4C, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
+        {
+
+            \_SB.PCI0.LPC.EC.CLPM ()
+            If (\_SB.PCI0.LPC.EC.HB1A)
+            {
+                \_SB.PCI0.LPC.EC.HKEY.MHKQ (0x4010)
+            }
+            Else
+            {
+                \_SB.PCI0.LPC.EC.HKEY.MHKQ (0x4011)
+                If (\_SB.PCI0.LPC.EC.BAT1.XB1S)
+                {
+                    If (_OSI ("Darwin"))
+                    {
+                        Notify (\_SB.PCI0.LPC.EC.BATC, 0x03) // Eject Request
+                    }
+                    Else
+                    {
+                        Notify (\_SB.PCI0.LPC.EC.BAT1, 0x03)
+                    }
+                }
             }
         }
     }
