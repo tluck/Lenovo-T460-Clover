@@ -211,7 +211,8 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
                     "Custom PS2 Map", Package()
                     {
                         Package() { },
-                        "e037=64", // PrtSc=F13
+                        "e038=e05b", //AltGr=Left Windows
+                        "e037=64", // PrtSc=F13,via SysPrefs->Keyboard->Shortcuts
                     },
                 },
             })
