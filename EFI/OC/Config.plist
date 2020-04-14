@@ -126,22 +126,6 @@
 				<key>Path</key>
 				<string>SSDT-SMCD.aml</string>
 			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>ACPI debuggin device</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-RMDT.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>ACPI debugging test</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-TEST.aml</string>
-			</dict>
 		</array>
 		<key>Block</key>
 		<array/>
@@ -1226,22 +1210,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/Sinetek-rtsx</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>ACPIDebug.kext</string>
-				<key>Comment</key>
-				<string>ACPI Debug logging</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/ACPIDebug</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
