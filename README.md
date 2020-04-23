@@ -52,7 +52,7 @@ sysInfo | neoFetch
 - [x] Internal camera (including Facetime)
 - [x] Trackpad, Trackpoint and physical buttons (including gestures)
 - [x] Sleep / Wake / Shutdown / Reboot (lid sleep and lid wake)
-- [x] Keyboard (incuding all fn Keys)
+- [x] Keyboard (incuding all fn Keys using [ThinkpadAssistant](https://github.com/MSzturc/ThinkpadAssistant))
 - [x] iMessage, FaceTime, App Store, iTunes Store (with valid smbios)
 - [x] DRM support (iTunes Movies, Apple TV+, Amazon Prime and Netflix, and others)
 
