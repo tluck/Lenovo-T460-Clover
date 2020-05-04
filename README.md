@@ -55,9 +55,9 @@ sysInfo | neoFetch
 - [x] Keyboard (incuding all fn Keys using [ThinkpadAssistant](https://github.com/MSzturc/ThinkpadAssistant))
 - [x] iMessage, FaceTime, App Store, iTunes Store (with valid smbios)
 - [x] DRM support (iTunes Movies, Apple TV+, Amazon Prime and Netflix, and others)
+- [x] SD Card Reader (v2.2 works but still a bit unstable)
 
 # What's not working ⚠️
-- [ ] SD Card Reader (driver in development but incomplete & unstable)
 - [ ] Fingerprint Reader (will never work since no drivers available)
 - [ ] Sidecar Wireless (doesn't work without apple native WIFI card)
 - [ ] Intel WiFi (this <b>must</b> be replaced in order to use WiFi)
