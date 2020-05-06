@@ -16,10 +16,13 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
     External (\_SB.PCI0.LPC.EC.XQ67, MethodObj)
     External (\_SB.PCI0.LPC.EC.XQ68, MethodObj)
     External (\_SB.PCI0.LPC.EC.XQ69, MethodObj)
+    External (\_SB.PCI0.LPC.EC.LED, MethodObj)
+    External (\_SB.PCI0.LPC.EC.HKEY.MMTS, MethodObj)
+    External (\_SB.PCI0.LPC.EC.HKEY.MMTG, MethodObj)
 
     Scope (\_SB.PCI0.LPC.EC)
     {
-
+        Name (LED1, Zero)
         // _Q6A - (Fn+F4) microphone mute key.
         Method(_Q6A, 0, NotSerialized)
         {
@@ -30,6 +33,20 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
 
                 //Bug: Currently it's not possivle to map F20 Key in Systemprefs
                 Notify (\_SB.PCI0.LPC.KBD, 0x036b)
+
+                // Toggle Mute Microphone LED
+                If ((LED1 == Zero))
+                {
+                    // 0x02 = Enable LED
+                    \_SB.PCI0.LPC_.EC.HKEY.MMTS (0x02)
+                    LED1 = One
+                }
+                Else
+                {
+                    // 0x00 = Disable LED
+                    \_SB.PCI0.LPC_.EC.HKEY.MMTS (Zero)
+                    LED1 = Zero
+                }
           	}
           	Else
           	{
@@ -210,7 +227,7 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
                     "Swap command and option", ">y",
                     "Custom PS2 Map", Package()
                     {
-                        Package() { },
+                        Package(Zero) { },
                         "e038=e05b", //AltGr=Left Windows
                         "e037=64", // PrtSc=F13,via SysPrefs->Keyboard->Shortcuts
                     },
