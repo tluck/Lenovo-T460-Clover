@@ -12,7 +12,7 @@ sysInfo | neoFetch
 
 # Laptop's Hardware
 - <b>Model</b>: Thinkpad T460 (20FN003LGE)
-- <b>Bios</b>: 1.26
+- <b>Bios</b>: 1.43
 - <b>CPU</b>: Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
 - <b>GPU</b>: Intel HD Graphics 520
 - <b>Storage</b>: WDC WDS480G2G0A-00JH30 (Upgraded)
