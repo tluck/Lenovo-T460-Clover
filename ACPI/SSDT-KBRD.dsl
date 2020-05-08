@@ -28,21 +28,25 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
         {
             If (_OSI ("Darwin"))
           	{
-                // Send a one-shot event (down then up) for scancode 64 to keyboard device. This
-                // is picked up by VoodooPS2 and sent to macOS as the F20 key.
-
-                //Bug: Currently it's not possivle to map F20 Key in Systemprefs
-                Notify (\_SB.PCI0.LPC.KBD, 0x036b)
-
                 // Toggle Mute Microphone LED
                 If ((LED1 == Zero))
                 {
+                    // ALT + F20
+                    Notify (\_SB.PCI0.LPC.KBD, 0x0138)
+                    Notify (\_SB.PCI0.LPC.KBD, 0x036b)
+                    Notify (\_SB.PCI0.LPC.KBD, 0x01b8)
+
                     // 0x02 = Enable LED
                     \_SB.PCI0.LPC_.EC.HKEY.MMTS (0x02)
                     LED1 = One
                 }
                 Else
                 {
+                    // STRG + F20
+                    Notify (\_SB.PCI0.LPC.KBD, 0x011d)
+                    Notify (\_SB.PCI0.LPC.KBD, 0x036b)
+                    Notify (\_SB.PCI0.LPC.KBD, 0x019d)
+
                     // 0x00 = Disable LED
                     \_SB.PCI0.LPC_.EC.HKEY.MMTS (Zero)
                     LED1 = Zero
