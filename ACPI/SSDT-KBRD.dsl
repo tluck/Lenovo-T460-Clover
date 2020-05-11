@@ -31,10 +31,10 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
                 // Toggle Mute Microphone LED
                 If ((LED1 == Zero))
                 {
-                    // ALT + F20
-                    Notify (\_SB.PCI0.LPC.KBD, 0x0138)
+                    // Right Shift + F20
+                    Notify (\_SB.PCI0.LPC.KBD, 0x0136)
                     Notify (\_SB.PCI0.LPC.KBD, 0x036b)
-                    Notify (\_SB.PCI0.LPC.KBD, 0x01b8)
+                    Notify (\_SB.PCI0.LPC.KBD, 0x01b6)
 
                     // 0x02 = Enable LED
                     \_SB.PCI0.LPC_.EC.HKEY.MMTS (0x02)
@@ -42,10 +42,10 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
                 }
                 Else
                 {
-                    // STRG + F20
-                    Notify (\_SB.PCI0.LPC.KBD, 0x011d)
+                    // Left Shift + F20
+                    Notify (\_SB.PCI0.LPC.KBD, 0x012a)
                     Notify (\_SB.PCI0.LPC.KBD, 0x036b)
-                    Notify (\_SB.PCI0.LPC.KBD, 0x019d)
+                    Notify (\_SB.PCI0.LPC.KBD, 0x01aa)
 
                     // 0x00 = Disable LED
                     \_SB.PCI0.LPC_.EC.HKEY.MMTS (Zero)
