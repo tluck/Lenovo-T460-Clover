@@ -3,8 +3,6 @@
 DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
 {
     // External references to EC, keyboard, and original methods.
-    External (\_SB.PCI0, DeviceObj)
-    External (\_SB.PCI0.LPC, DeviceObj)
     External (\_SB.PCI0.LPC.EC, DeviceObj)
     External (\_SB.PCI0.LPC.KBD, DeviceObj)
     External (\_SB.PCI0.LPC.EC.XQ6A, MethodObj)
@@ -16,7 +14,6 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
     External (\_SB.PCI0.LPC.EC.XQ67, MethodObj)
     External (\_SB.PCI0.LPC.EC.XQ68, MethodObj)
     External (\_SB.PCI0.LPC.EC.XQ69, MethodObj)
-    External (\_SB.PCI0.LPC.EC.LED, MethodObj)
     External (\_SB.PCI0.LPC.EC.HKEY.MMTS, MethodObj)
     External (\_SB.PCI0.LPC.EC.HKEY.MMTG, MethodObj)
 
