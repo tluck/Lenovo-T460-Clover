@@ -6,9 +6,10 @@ sysInfo | neoFetch
 ![T460](Images/SysInfo.png) | ![T460](Images/NeoFetch.png)
 
 # Update History
-- [x] macOS 10.15.3
-- [x] macOS 10.15.4
+- [x] macOS 10.15.5
 - [x] macOS 10.15.4 Supplemental Update
+- [x] macOS 10.15.4
+- [x] macOS 10.15.3
 
 # Laptop's Hardware
 - <b>Model</b>: Thinkpad T460 (20FN003LGE)
