@@ -6,6 +6,7 @@ sysInfo | neoFetch
 ![T460](Images/SysInfo.png) | ![T460](Images/NeoFetch.png)
 
 # Update History
+- [x] macOS 10.15.5 Supplemental Update
 - [x] macOS 10.15.5
 - [x] macOS 10.15.4 Supplemental Update
 - [x] macOS 10.15.4
