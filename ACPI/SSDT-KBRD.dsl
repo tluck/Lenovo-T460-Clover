@@ -16,8 +16,27 @@ DefinitionBlock("", "SSDT", 2, "T460", "KBRD", 0)
     External (\_SB.PCI0.LPC.EC.XQ69, MethodObj)
     External (\_SB.PCI0.LPC.EC.XQ1F, MethodObj)
     External (\_SB.PCI0.LPC.EC.HKEY.MMTS, MethodObj)
-    External (\_SB.PCI0.LPC.EC.HKEY.MMTG, MethodObj)
     External (\_SB.PCI0.LPC.EC.HKEY.MLCS, MethodObj)
+    External (_SI._SST, MethodObj)
+    
+    Scope (\)
+    {
+
+        // This ACPI reserved method is run once before sleep and once after awakened
+        Method (_TTS, 1, NotSerialized)
+        {
+            If (_OSI ("Darwin"))
+            {
+                // Arg0 contains the system state of transition
+                // for wake state it is Zero.
+                If (Arg0 == Zero & \_SB.PCI0.LPC.EC.LED1 == One)
+                {
+                    \_SB.PCI0.LPC.EC.HKEY.MMTS (0x02)
+                }
+                
+            }
+        }
+    }
 
     Scope (\_SB.PCI0.LPC.EC)
     {
