@@ -1574,6 +1574,8 @@
 			<integer>0</integer>
 			<key>DisplayLevel</key>
 			<integer>2147483650</integer>
+			<key>SysReport</key>
+			<true/>
 			<key>Target</key>
 			<integer>6</integer>
 		</dict>
