@@ -16,7 +16,7 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string>GPRW --> XPRW</string>
+                    <string>GPRW to XPRW</string>
                     <key>Path</key>
                     <string>SSDT-GPRW.aml</string>
                     <key>Enabled</key>
@@ -86,7 +86,6 @@
                     <key>Path</key>
                     <string>SSDT-NTFY.aml</string>
                 </dict>
-
                 <dict>
                     <key>Comment</key>
                     <string>Add MCHC</string>
@@ -175,8 +174,16 @@
                     <key>Enabled</key>
                     <true/>
                 </dict>
+                <dict>
+                    <key>Comment</key>
+                    <string>trackpad</string>
+                    <key>Path</key>
+                    <string>SSDT-ThinkPad_TrackPad.aml</string>
+                    <key>Enabled</key>
+                    <true/>
+                </dict>
             </array>
-            <key>Block</key>
+            <key>Delete</key>
             <array>
             </array>
             <key>Patch</key>
@@ -189,69 +196,23 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        X0NSUwiK
-                    </data>
+                    <data>X0NSUwig</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                        AAAAAA==
-                    </data>
+                    <data>AAAAAA==</data>
                     <key>Replace</key>
-                    <data>
-                        WENSUwiK
-                    </data>
+                    <data>WENSUwig</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data>
-                        AAAAAA==
-                    </data>
-                </dict>
-                <dict>
-                    <key>Comment</key>
-                    <string>TIMR IRQ 0 Patch</string>
-                    <key>Count</key>
-                    <integer>0</integer>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>Find</key>
-                    <data>
-                        IgEAeQA=
-                    </data>
-                    <key>Limit</key>
-                    <integer>0</integer>
-                    <key>Mask</key>
-                    <data>
-                    </data>
-                    <key>OemTableId</key>
-                    <data>
-                        AAAAAA==
-                    </data>
-                    <key>Replace</key>
-                    <data>
-                        IgAAeQA=
-                    </data>
-                    <key>ReplaceMask</key>
-                    <data>
-                    </data>
-                    <key>Skip</key>
-                    <integer>0</integer>
-                    <key>TableLength</key>
-                    <integer>0</integer>
-                    <key>TableSignature</key>
-                    <data>
-                        AAAAAA==
-                    </data>
+                    <data>AAAAAA==</data>
                 </dict>
                 <dict>
                     <key>Comment</key>
@@ -261,33 +222,49 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        IgABeQA=
-                    </data>
+                    <data>IgABeQA=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                        AAAAAA==
-                    </data>
+                    <data>AAAAAA==</data>
                     <key>Replace</key>
-                    <data>
-                        IgAAeQA=
-                    </data>
+                    <data>IgAAeQA=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data>
-                        AAAAAA==
-                    </data>
+                    <data>AAAAAA==</data>
+                </dict>
+                <dict>
+                    <key>Comment</key>
+                    <string>TIMR IRQ 0 Patch</string>
+                    <key>Count</key>
+                    <integer>0</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>IgEAeQA=</data>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
+                    <data></data>
+                    <key>OemTableId</key>
+                    <data>AAAAAA==</data>
+                    <key>Replace</key>
+                    <data>IgAAeQA=</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                    <key>TableLength</key>
+                    <integer>0</integer>
+                    <key>TableSignature</key>
+                    <data>AAAAAA==</data>
                 </dict>
                 <dict>
                     <key>Comment</key>
@@ -297,24 +274,17 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        R1BSVwI=
-                    </data>
+                    <data>R1BSVwI=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        WFBSVwI=
-                    </data>
+                    <data>WFBSVwI=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
@@ -328,24 +298,17 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        Cm0KAw==
-                    </data>
+                    <data>Cm0KAw==</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        Cm0KAA==
-                    </data>
+                    <data>Cm0KAA==</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
@@ -359,24 +322,17 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        Cm0KBA==
-                    </data>
+                    <data>Cm0KBA==</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        Cm0KAA==
-                    </data>
+                    <data>Cm0KAA==</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
@@ -390,24 +346,17 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        R0JJRgM=
-                    </data>
+                    <data>R0JJRgM=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        WEJJRgM=
-                    </data>
+                    <data>WEJJRgM=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
@@ -421,24 +370,17 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        R0JJWAM=
-                    </data>
+                    <data>R0JJWAM=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        WEJJWAM=
-                    </data>
+                    <data>WEJJWAM=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
@@ -452,24 +394,17 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        R0JTVAQ=
-                    </data>
+                    <data>R0JTVAQ=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        WEJTVAQ=
-                    </data>
+                    <data>WEJTVAQ=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
@@ -483,30 +418,22 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        AUJBVE0H
-                    </data>
+                    <data>AUJBVE0H</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        AUJBVE0A
-                    </data>
+                    <data>AUJBVE0A</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
                     <integer>0</integer>
                 </dict>
-
                 <dict>
                     <key>Comment</key>
                     <string>_Q22 to XQ22</string>
@@ -715,10 +642,6 @@
                     <key>TableSignature</key>
                     <data></data>
                 </dict>
-
-
-
-
                 <dict>
                     <key>Comment</key>
                     <string>Notify-batC#1</string>
@@ -727,24 +650,17 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        hkJBVDA=
-                    </data>
+                    <data>hkJBVDA=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        hkJBVEM=
-                    </data>
+                    <data>hkJBVEM=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
@@ -758,24 +674,17 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        hkJBVDE=
-                    </data>
+                    <data>hkJBVDE=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        hkJBVEM=
-                    </data>
+                    <data>hkJBVEM=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
@@ -789,30 +698,22 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        hlwvBV9TQl9QQ0kwTFBDQkVDX19CQVQx
-                    </data>
+                    <data>hlwvBV9TQl9QQ0kwTFBDQkVDX19CQVQx</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        hlwvBV9TQl9QQ0kwTFBDQkVDX19CQVRD
-                    </data>
+                    <data>hlwvBV9TQl9QQ0kwTFBDQkVDX19CQVRD</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
                     <integer>0</integer>
                 </dict>
-
                 <dict>
                     <key>Comment</key>
                     <string>_PTS to ZPTS(1,N)</string>
@@ -821,31 +722,23 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        X1BUUwE=
-                    </data>
+                    <data>X1BUUwE=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        WlBUUwE=
-                    </data>
+                    <data>WlBUUwE=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data>
-                    </data>
+                    <data></data>
                 </dict>
                 <dict>
                     <key>Comment</key>
@@ -855,33 +748,24 @@
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>
-                        X1dBSwk=
-                    </data>
+                    <data>X1dBSwk=</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>OemTableId</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>
-                        WldBSwk=
-                    </data>
+                    <data>WldBSwk=</data>
                     <key>ReplaceMask</key>
-                    <data>
-                    </data>
+                    <data></data>
                     <key>Skip</key>
                     <integer>0</integer>
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data>
-                    </data>
+                    <data></data>
                 </dict>
-
                 <dict>
                     <key>Comment</key>
                     <string>Windows 2015 to Darwin</string>
@@ -1078,10 +962,25 @@
         <dict>
             <key>Add</key>
             <dict>
-                <key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
+		<key>PciRoot(0x0)/Pci(0x1F,0x6)</key>
+		<dict>
+                    <key>built-in</key>
+                    <data>AQ==</data>
+		</dict>
+                <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
                 <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Internal@0,31,3</string>
+                    <key>device-id</key>
+                    <data>cJ0AAA==</data>
+                    <key>device_type</key>
+                    <string>Audio device</string>
+                    <key>hda-gfx</key>
+                    <string>onboard-1</string>
                     <key>layout-id</key>
-                    <data>HAAAAA==</data>
+                    <data>HQAAAA==</data>
+                    <key>model</key>
+                    <string>100 Series/C230 Series Chipset Family HD Audio Controller</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
                 <dict>
@@ -1099,7 +998,7 @@
                     <data>AAAAgA==</data>
                 </dict>
             </dict>
-            <key>Block</key>
+            <key>Delete</key>
             <dict>
                 <key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
                 <array>
@@ -1431,7 +1330,25 @@
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
-                <dict>
+
+		<dict>
+                    <key>BundlePath</key>
+                    <string>BT4LEContinuityFixup.kext</string>
+                    <key>Comment</key>
+                    <string></string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/BT4LEContinuityFixup</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+
+		<dict>
                     <key>BundlePath</key>
                     <string>EFICheckDisabler.kext</string>
                     <key>Comment</key>
@@ -1506,8 +1423,6 @@
                 <string>External</string>
                 <key>HideAuxiliary</key>
                 <false/>
-                <key>HideSelf</key>
-                <true/>
                 <key>PickerAttributes</key>
                 <integer>1</integer>
                 <key>PickerAudioAssist</key>
@@ -1586,16 +1501,14 @@
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <dict>
                     <key>boot-args</key>
-                    <string>keepsyms=1 alcid=29 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
+                    <string>brcmfx-driver=2 -hbfx-dump-nvram</string>
                     <key>csr-active-config</key>
-                    <data>AAAAAA==</data>
+                    <data>AwAAAA==</data>
                     <key>prev-lang:kbd</key>
                     <string>en-US:0</string>
-                    <key>SystemAudioVolume</key>
-                    <data>Rg==</data>
                 </dict>
             </dict>
-            <key>Block</key>
+            <key>Delete</key>
             <dict>
                 <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
                 <array>
@@ -1651,7 +1564,7 @@
                 <key>MLB</key>
                 <string></string>
                 <key>ROM</key>
-                <data>ESIzAAAA</data>
+                <data>VOGtZSXW</data>
                 <key>SpoofVendor</key>
                 <true/>
                 <key>SystemProductName</key>
@@ -1672,6 +1585,19 @@
         </dict>
         <key>UEFI</key>
         <dict>
+            <key>APFS</key>
+            <dict>
+                <key>EnableJumpstart</key>
+                <true/>
+                <key>HideVerbose</key>
+                <true/>
+                <key>JumpstartHotPlug</key>
+                <false/>
+                <key>MinDate</key>
+                <integer>0</integer>
+                <key>MinVersion</key>
+                <integer>0</integer>
+            </dict>
             <key>Audio</key>
             <dict>
                 <key>AudioCodec</key>
@@ -1695,7 +1621,6 @@
             <array>
                 <string>OpenCanopy.efi</string>
                 <string>HfsPlus.efi</string>
-                <string>ApfsDriverLoader.efi</string>
                 <string>OpenRuntime.efi</string>
             </array>
             <key>Input</key>
@@ -1725,8 +1650,6 @@
                 <false/>
                 <key>ConsoleMode</key>
                 <string></string>
-                <key>DirectGopCacheMode</key>
-                <string></string>
                 <key>DirectGopRendering</key>
                 <false/>
                 <key>IgnoreTextInGraphics</key>
@@ -1744,7 +1667,7 @@
                 <key>TextRenderer</key>
                 <string>BuiltinGraphics</string>
             </dict>
-            <key>Protocols</key>
+            <key>ProtocolOverrides</key>
             <dict>
                 <key>AppleAudio</key>
                 <false/>
@@ -1777,13 +1700,7 @@
             </dict>
             <key>Quirks</key>
             <dict>
-                <key>ExitBootServicesDelay</key>
-                <integer>0</integer>
-                <key>IgnoreInvalidFlexRatio</key>
-                <true/>
-                <key>ReleaseUsbOwnership</key>
-                <false/>
-                <key>RequestBootVarFallback</key>
+                <key>DeduplicateBootOrder</key>
                 <true/>
                 <key>RequestBootVarRouting</key>
                 <true/>
