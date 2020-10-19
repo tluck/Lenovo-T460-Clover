@@ -361,9 +361,11 @@
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
+		<key>AppeIntelCPUPM</key>
+		<false/>
 		<key>AppleRTC</key>
 		<true/>
-		<key>AsusAICPUPM</key>
+		<key>Debug</key>
 		<false/>
 		<key>KernelLapic</key>
 		<false/>
@@ -639,6 +641,81 @@
 				</data>
 			</dict>
 		</array>
+	</dict>
+	<key>Quirks</key>
+	<dict>
+		<key>AppleCpuPmCfgLock</key>
+		<true/>
+		<key>AppleXcpmCfgLock</key>
+		<true/>
+		<key>AppleXcpmExtraMsrs</key>
+		<false/>
+		<key>AppleXcpmForceBoost</key>
+		<false/>
+		<key>AvoidRuntimeDefrag</key>
+		<true/>
+		<key>CustomSMBIOSGuid</key>
+		<false/>
+		<key>DevirtualiseMmio</key>
+		<true/>
+		<key>DisableIoMapper</key>
+		<true/>
+		<key>DisableLinkeditJettison</key>
+		<true/>
+		<key>DisableRtcChecksum</key>
+		<true/>
+		<key>DisableSingleUser</key>
+		<false/>
+		<key>DisableVariableWrite</key>
+		<false/>
+		<key>DiscardHibernateMap</key>
+		<false/>
+		<key>DummyPowerManagement</key>
+		<false/>
+		<key>EnableSafeModeSlide</key>
+		<true/>
+		<key>EnableWriteUnprotector</key>
+		<true/>
+		<key>ExternalDiskIcons</key>
+		<false/>
+		<key>ForceExitBootServices</key>
+		<false/>
+		<key>FuzzyMatch</key>
+		<true/>
+		<key>IncreasePciBarSize</key>
+		<false/>
+		<key>KernelCache</key>
+		<string>Auto</string>
+		<key>LapicKernelPanic</key>
+		<false/>
+		<key>PanicNoKextDump</key>
+		<true/>
+		<key>PowerTimeoutKernelPanic</key>
+		<true/>
+		<key>ProtectMemoryRegions</key>
+		<false/>
+		<key>ProtectSecureBoot</key>
+		<false/>
+		<key>ProtectUefiServices</key>
+		<false/>
+		<key>ProvideConsoleGopEnable</key>
+		<true/>
+		<key>ProvideCustomSlide</key>
+		<true/>
+		<key>ProvideMaxSlide</key>
+		<integer>0</integer>
+		<key>RebuildAppleMemoryMap</key>
+		<true/>
+		<key>SetupVirtualMap</key>
+		<true/>
+		<key>SignalAppleOS</key>
+		<false/>
+		<key>SyncRuntimePermissions</key>
+		<true/>
+		<key>ThirdPartyDrives</key>
+		<true/>
+		<key>XhciPortLimit</key>
+		<false/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
